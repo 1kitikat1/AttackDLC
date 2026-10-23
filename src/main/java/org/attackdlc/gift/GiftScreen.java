@@ -9,37 +9,51 @@ import org.attackdlc.utils.render.gui.UiFonts;
 
 /**
  * Рулетка подарков — модальный экран на титульном экране.
+ *
+ * <p>Шансы (заранее определены, не меняются при анимации):
+ *   0 дней — 60%, 1 день — 15%, 3 дня — 14%, 6 дней — 1%.</p>
+ *
+ * <p>Результат фиксируется до начала вращения.
+ * Кулдаун — 7 дней на HWID, проверяется через Firebase.</p>
  */
 public final class GiftScreen {
 
     public enum State { IDLE, OPENING, SPINNING, RESULT, CLOSED }
 
-    private static final int[] SEGMENT_COLORS = {
-            0xFF4A4A5A,  // серый -- 0 дней
-            0xFF3B82F6,  // синий -- 1 день
-            0xFF8B5CF6,  // фиолетовый -- 3 дня
-            0xFFF59E0B,  // золотой -- 6 дней
+    private static final int[] PRIZE_DAYS      = {0, 1, 3, 6};
+    private static final String[] PRIZE_TEXT   = {"0 дн", "1 дн", "3 дн", "6 дн"};
+    private static final int[] SEGMENT_COLORS  = {
+            0xFF4A4A5A, // серый   — 0 дней
+            0xFF2563EB, // синий   — 1 день
+            0xFF7C3AED, // фиолет  — 3 дня
+            0xFFF59E0B, // золотой — 6 дней
     };
-    private static final String[] SEGMENT_LABELS = {"0 дн", "1 дн", "3 дн", "6 дн"};
+    private static final int    SEGMENT_BORDER = 0xFF1C1C27;
+    private static final int    NUM_SEGMENTS   = 4;
+    private static final float  DEGREE_PER_SEG = 360f / NUM_SEGMENTS;
 
-    private State state = State.IDLE;
-    private float progress = 0f;
-    private float wheelAngle = 0f;
-    private long spinStartTime = 0L;
-    private int wonDays = 0;
+    private State        state         = State.IDLE;
+    private float        progress      = 0f;
+    private float        wheelAngle    = 0f;
+    private float        targetAngle   = 0f;
+    private long         spinStartMs   = 0L;
+    private static final float SPIN_DURATION_MS = 5000f;
+
+    private int wonDays   = 0;
     private boolean showedResult;
+
+    // ─── update ────────────────────────────────────────────────────
 
     public void update(float dt) {
         switch (state) {
             case OPENING -> {
-                progress = Math.min(1f, progress + dt * 2.5f);
+                progress = Math.min(1f, progress + dt * 2.8f);
                 if (progress >= 1f) { state = State.SPINNING; startSpin(); }
             }
             case SPINNING -> {
-                float elapsed = (System.currentTimeMillis() - spinStartTime) / 1000f;
-                float speed = Math.max(0f, 10f - elapsed * 1.5f);
-                wheelAngle += speed * dt;
-                if (elapsed > 4.8f) { state = State.RESULT; progress = 0f; showedResult = false; }
+                float t = Math.min(1f, (System.currentTimeMillis() - spinStartMs) / SPIN_DURATION_MS);
+                wheelAngle = easeOutCubic(t) * targetAngle;
+                if (t >= 1f) { state = State.RESULT; progress = 0f; showedResult = false; }
             }
             case RESULT -> progress = Math.min(1f, progress + dt * 3f);
             case CLOSED -> {
@@ -49,62 +63,176 @@ public final class GiftScreen {
         }
     }
 
+    // ─── render ────────────────────────────────────────────────────
+
     public void render(GuiGraphicsExtractor ctx, int w, int h, float mx, float my) {
         if (state == State.IDLE) return;
         float alpha = state == State.CLOSED ? progress : 1f;
 
-        float cx = w / 2f;
-        float cy = h / 2f - 20f;
-        float radius = Math.min(w, h) * 0.26f;
+        float cx  = w / 2f;
+        float cy  = h / 2f - 10f;
+        float R   = Math.min(w, h) * 0.28f;
 
         // Фон
         Render2DUtil.rect(0, 0, w, h)
-                .color(ColorUtil.rgba(4, 4, 8, (int)(alpha * 170)))
+                .color(ColorUtil.rgba(3, 3, 7, (int)(alpha * 190)))
                 .draw();
 
         // Заголовок
-        String title = state == State.SPINNING ? "Крутим..."
-                : state == State.RESULT ? "Результат!" : "Подарок";
-        Render2DUtil.text(cx - 40f, cy - radius - 52f, 20f, title)
+        String title = state == State.SPINNING ? "✨ Крутим..."
+                : state == State.RESULT  ? "🎉 Результат!" : "🎁 Подарок";
+        Render2DUtil.text(cx - 50f, cy - R - 58f, 22f, title)
                 .font(UiFonts.sfPro(700))
                 .style(UiFontStyle.MEDIUM)
                 .color(ColorUtil.multiplyAlpha(0xFFFFFFFF, alpha))
                 .draw();
 
-        Render2DUtil.text(cx - 55f, cy - radius - 26f, 9f,
-                state == State.SPINNING ? "Шансы: 0 / 1 / 3 / 6 дней подписки"
-                        : state == State.RESULT ? "Удачи в следующий раз!" : "Раз в неделю -- привязка к ПК")
+        String hint = state == State.SPINNING ? "Шансы: 0 / 1 / 3 / 6 дней подписки"
+                    : state == State.RESULT  ? "Спасибо за игру!"
+                    : "Раз в неделю  ·  привязка к ПК";
+        Render2DUtil.text(cx - 60f, cy - R - 30f, 9f, hint)
                 .font(UiFonts.sfPro(500))
-                .color(ColorUtil.multiplyAlpha(0xFF787E88, alpha))
+                .style(UiFontStyle.REGULAR)
+                .color(ColorUtil.multiplyAlpha(0xFF6B7280, alpha))
                 .draw();
 
         // Колесо
-        drawWheel(ctx, cx, cy, radius, alpha);
+        drawWheel(ctx, cx, cy, R, alpha);
 
         // Указатель
-        drawPointer(ctx, cx, cy - radius - 8f, alpha);
+        drawPointer(ctx, cx, cy - R - 6f, alpha);
 
-        // Результат
-        if (state == State.RESULT && progress > 0.2f) {
-            drawResult(cx, cy + radius + 42f, alpha);
+        // Карточка результата
+        if (state == State.RESULT && progress > 0.15f) {
+            drawResultCard(cx, cy + R + 44f, alpha);
         }
 
         // Кнопка закрытия
         if (state != State.SPINNING) {
-            float bx = cx + radius + 14f;
+            float bx = cx + R + 18f;
             float by = cy - 16f;
             boolean hover = mx >= bx && mx <= bx + 32f && my >= by && my <= by + 32f;
             Render2DUtil.rect(bx, by, 32f, 32f)
                     .color(ColorUtil.multiplyAlpha(hover ? 0xFFEF4444 : 0xFF787E88, alpha))
                     .radius(8f)
                     .draw();
-            Render2DUtil.text(bx + 8f, by + 4f, 16f, "\u2715")
+            Render2DUtil.text(bx + 7f, by + 3f, 18f, "\u2715")
                     .font(UiFonts.sfPro(700))
                     .color(ColorUtil.multiplyAlpha(0xFFFFFFFF, alpha))
                     .draw();
             if (hover) close();
         }
     }
+
+    // ─── колесо ────────────────────────────────────────────────────
+
+    private void drawWheel(GuiGraphicsExtractor ctx, float cx, float cy, float R, float alpha) {
+        MsdfFont labelFont = UiFonts.sfPro(600);
+
+        // Тёмная подложка
+        Render2DUtil.rect(cx - R, cy - R, R * 2f, R * 2f)
+                .color(ColorUtil.multiplyAlpha(0xFF0E0F14, alpha))
+                .radius(R)
+                .draw();
+
+        // Сегменты
+        for (int i = 0; i < NUM_SEGMENTS; i++) {
+            float segAngleDeg = wheelAngle + i * DEGREE_PER_SEG;
+            drawWedge(ctx, cx, cy, R, segAngleDeg, DEGREE_PER_SEG * 0.92f,
+                    SEGMENT_COLORS[i], alpha);
+            drawSegmentLabel(ctx, cx, cy, R * 0.6f, segAngleDeg,
+                    PRIZE_TEXT[i], alpha, labelFont);
+        }
+
+        // Ободок
+        Render2DUtil.rect(cx - R - 3f, cy - R - 3f, (R + 3f) * 2f, (R + 3f) * 2f)
+                .color(0)
+                .radius(R + 3f)
+                .border(3f, ColorUtil.multiplyAlpha(SEGMENT_BORDER, alpha))
+                .draw();
+
+        // Центр
+        int cr = Math.round(R * 0.18f);
+        Render2DUtil.rect(cx - cr, cy - cr, cr * 2f, cr * 2f)
+                .color(ColorUtil.multiplyAlpha(0xFF0C0D12, alpha))
+                .radius(cr)
+                .draw();
+        Render2DUtil.text(cx - 9f, cy - 9f, 16f, "\uD83C\uDF81")
+                .font(UiFonts.sfPro(400))
+                .color(ColorUtil.multiplyAlpha(0xFFFFFFFF, alpha))
+                .draw();
+    }
+
+    /** Сектор-клин: прямоугольник от центра к краю, повёрнутый на angleDeg. */
+    private void drawWedge(GuiGraphicsExtractor ctx, float cx, float cy, float R,
+                            float angleDeg, float sweepDeg, int color, float alpha) {
+        // Половина ширины клина на окружности ≈ R·tan(sweepDeg/2)
+        float halfW = R * (float) Math.tan(Math.toRadians(sweepDeg / 2f));
+        float rectW = halfW * 2f;
+        float rectH = R * 0.96f;
+
+        var pose = ctx.pose();
+        pose.pushMatrix();
+        pose.translate(cx, cy);
+        pose.rotate((float) Math.toRadians(angleDeg));
+        // Нижний край прямоугольника = центр колеса
+        Render2DUtil.rect(-rectW / 2f, 0f, rectW, rectH)
+                .color(ColorUtil.multiplyAlpha(color, alpha * 0.88f))
+                .radius(4f)
+                .draw();
+        pose.popMatrix();
+    }
+
+    private void drawSegmentLabel(GuiGraphicsExtractor ctx, float cx, float cy, float r,
+                                   float angleDeg, String text, float alpha, MsdfFont font) {
+        double rad = Math.toRadians(angleDeg);
+        float lx = (float)(cx + Math.cos(rad) * r);
+        float ly = (float)(cy - Math.sin(rad) * r);
+        Render2DUtil.text(lx - 16f, ly - 7f, 11f, text)
+                .font(font)
+                .style(UiFontStyle.MEDIUM)
+                .color(ColorUtil.multiplyAlpha(0xFFFFFFFF, alpha * 0.92f))
+                .draw();
+    }
+
+    private void drawPointer(GuiGraphicsExtractor ctx, float x, float y, float alpha) {
+        float s = 14f;
+        Render2DUtil.rect(x - s / 2f, y, s, s)
+                .color(ColorUtil.multiplyAlpha(0xFFFFD166, alpha))
+                .radius(3f)
+                .draw();
+        Render2DUtil.rect(x - 4f, y + s, 8f, 6f)
+                .color(ColorUtil.multiplyAlpha(0xFFFFD166, alpha))
+                .radius(2f)
+                .draw();
+    }
+
+    private void drawResultCard(float cx, float y, float alpha) {
+        if (showedResult) return;
+        showedResult = true;
+        int days = wonDays;
+        String text = days == 0 ? "Не повезло в этот раз…"
+                    : "Выпало " + days + " " + dayWord(days) + "!";
+        int color = days == 0 ? 0xFF787E88
+                  : days == 1 ? 0xFF60A5FA
+                  : days == 3 ? 0xFFA78BFA
+                  : 0xFFFBBF24;
+        float t = Math.max(0f, (alpha - 0.15f) / 0.85f);
+
+        float pw = 200f, ph = 52f;
+        Render2DUtil.rect(cx - pw / 2f, y, pw, ph)
+                .color(ColorUtil.multiplyAlpha(0xFF13141F, t))
+                .radius(12f)
+                .border(1.5f, ColorUtil.multiplyAlpha(color, t * 0.45f))
+                .draw();
+        Render2DUtil.text(cx - 50f, y + 14f, 15f, text)
+                .font(UiFonts.sfPro(700))
+                .style(UiFontStyle.MEDIUM)
+                .color(ColorUtil.multiplyAlpha(color, t))
+                .draw();
+    }
+
+    // ─── клик / открытие / закрытие ───────────────────────────────
 
     public boolean handleClick(float mx, float my, float bx, float by, float bw, float bh) {
         if (state != State.IDLE && state != State.CLOSED) return true;
@@ -131,98 +259,39 @@ public final class GiftScreen {
         }
     }
 
-    // --- wheel ---
+    // ─── логика спина ──────────────────────────────────────────────
 
-    private void drawWheel(GuiGraphicsExtractor ctx, float cx, float cy, float radius, float alpha) {
-        int segs = SEGMENT_COLORS.length;
-        float degPerSeg = 360f / segs;
-        MsdfFont font = UiFonts.sfPro(600);
-
-        for (int i = 0; i < segs; i++) {
-            float angle = wheelAngle + i * degPerSeg;
-            drawSector(ctx, cx, cy, radius, angle, degPerSeg, SEGMENT_COLORS[i], alpha);
-
-            float midRad = (float) Math.toRadians(angle + degPerSeg / 2f);
-            float labelR = radius * 0.6f;
-            float lx = cx + (float) Math.cos(midRad) * labelR;
-            float ly = cy + (float) Math.sin(midRad) * labelR;
-            int lc = i == 0 ? 0xFF9CA3AF : 0xFFFFFFFF;
-            Render2DUtil.text(lx - 14f, ly - 6f, 10f, SEGMENT_LABELS[i])
-                    .font(font)
-                    .style(UiFontStyle.MEDIUM)
-                    .color(ColorUtil.multiplyAlpha(lc, alpha * 0.88f))
-                    .draw();
-        }
-
-        // Обводка
-        Render2DUtil.rect(cx - radius, cy - radius, radius * 2f, radius * 2f)
-                .color(0)
-                .radius(radius)
-                .border(2f, ColorUtil.multiplyAlpha(0xFF3A3F4A, alpha))
-                .draw();
-
-        // Центр
-        int cr = Math.round(radius * 0.16f);
-        Render2DUtil.rect(cx - cr, cy - cr, cr * 2f, cr * 2f)
-                .color(ColorUtil.multiplyAlpha(0xFF0C0D10, alpha))
-                .radius(cr)
-                .draw();
-        Render2DUtil.text(cx - 8f, cy - 8f, 14f, "\ud83c\udf81")
-                .font(UiFonts.sfPro(400))
-                .color(ColorUtil.multiplyAlpha(0xFFFFFFFF, alpha))
-                .draw();
-    }
-
-    private void drawSector(GuiGraphicsExtractor ctx, float cx, float cy, float r,
-                             float angleDeg, float sweepDeg, int color, float alpha) {
-        var pose = ctx.pose();
-        pose.pushMatrix();
-        pose.translate(cx, cy);
-        pose.rotate((float) Math.toRadians(angleDeg + sweepDeg / 2f));
+    /** Определяет результат ДО анимации и рассчитывает целевой угол. */
+    private void initSpin() {
+        String hwid = org.attackdlc.license.Hwid.get();
+        String uid  = "";
         try {
-            float halfSweep = sweepDeg / 2f;
-            float chord = 2f * r * (float) Math.sin(Math.toRadians(halfSweep));
-            float w = chord + 2f;
-            float h = r * 0.95f;
-            Render2DUtil.rect(-w / 2f, 0f, w, h)
-                    .color(ColorUtil.multiplyAlpha(color, alpha * 0.85f))
-                    .radius(h * 0.08f)
-                    .draw();
-        } finally {
-            pose.popMatrix();
+            uid = (String) Class.forName("ru.xd.Session")
+                    .getMethod("getUid").invoke(null);
+        } catch (Throwable ignored) {}
+
+        boolean can = GiftSpinManager.canSpin(hwid);
+        if (!can) { state = State.CLOSED; progress = 1f; return; }
+
+        GiftSpinManager.SpinResult result = GiftSpinManager.spin(hwid, uid);
+        wonDays = result.ok() ? result.days() : 0;
+
+        // Индекс сегмента, который соответствует wonDays
+        int prizeIdx = 0;
+        for (int i = 0; i < PRIZE_DAYS.length; i++) {
+            if (PRIZE_DAYS[i] == wonDays) { prizeIdx = i; break; }
         }
+        // Целевой угол: 5 полных оборотов + позиция prizeIdx + случайный сдвиг внутри сегмента
+        float jitter = (float) (Math.random() - 0.5) * 18f;
+        targetAngle = prizeIdx * DEGREE_PER_SEG + 360f * 5f + jitter;
     }
 
-    private void drawPointer(GuiGraphicsExtractor ctx, float x, float y, float alpha) {
-        var pose = ctx.pose();
-        pose.pushMatrix();
-        pose.translate(x, y);
-        try {
-            float s = 12f;
-            Render2DUtil.rect(-s / 2f, -s / 2f, s, s)
-                    .color(ColorUtil.multiplyAlpha(0xFFFFD700, alpha))
-                    .draw();
-            Render2DUtil.rect(-s / 2f, s / 2f - 2f, s, 2f)
-                    .color(ColorUtil.multiplyAlpha(0xFFFFD700, alpha))
-                    .draw();
-        } finally {
-            pose.popMatrix();
-        }
+    private void startSpin() {
+        spinStartMs = System.currentTimeMillis();
     }
 
-    private void drawResult(float x, float y, float alpha) {
-        if (showedResult) return;
-        showedResult = true;
-        int days = wonDays;
-        String text = days == 0 ? "Не повезло..." : "Выпало " + days + " " + dayWord(days) + "!";
-        int color = days == 0 ? 0xFF787E88 : days == 1 ? 0xFF3B82F6
-                : days == 3 ? 0xFF8B5CF6 : 0xFFF59E0B;
-        float t = Math.max(0f, (alpha - 0.2f) / 0.8f);
-        Render2DUtil.text(x - 60f, y, 16f, text)
-                .font(UiFonts.sfPro(700))
-                .style(UiFontStyle.MEDIUM)
-                .color(ColorUtil.multiplyAlpha(color, t))
-                .draw();
+    private static float easeOutCubic(float t) {
+        return 1f - (1f - t) * (1f - t) * (1f - t);
     }
 
     private static String dayWord(int days) {
@@ -233,18 +302,4 @@ public final class GiftScreen {
         if (abs >= 2 && abs <= 4) return "дня";
         return "дней";
     }
-
-    private void initSpin() {
-        String hwid = org.attackdlc.license.Hwid.get();
-        String uid = "";
-        try {
-            uid = (String) Class.forName("ru.xd.Session").getMethod("getUid").invoke(null);
-        } catch (Throwable ignored) {}
-        boolean can = GiftSpinManager.canSpin(hwid);
-        if (!can) { state = State.CLOSED; progress = 1f; return; }
-        GiftSpinManager.SpinResult result = GiftSpinManager.spin(hwid, uid);
-        wonDays = result.ok() ? result.days() : 0;
-    }
-
-    private void startSpin() { spinStartTime = System.currentTimeMillis(); }
 }
