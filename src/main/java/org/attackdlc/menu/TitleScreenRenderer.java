@@ -8,6 +8,7 @@ import net.minecraft.client.gui.screens.multiplayer.JoinMultiplayerScreen;
 import net.minecraft.client.gui.screens.options.OptionsScreen;
 import net.minecraft.client.gui.screens.worldselection.SelectWorldScreen;
 import org.attackdlc.context.RenderContext;
+import org.attackdlc.gift.GiftScreen;
 import org.attackdlc.menu.accounts.AccountsScreen;
 import org.attackdlc.utils.ColorUtil;
 import org.attackdlc.utils.render.Textures;
@@ -58,6 +59,11 @@ public final class TitleScreenRenderer {
     private static String cachedGreeting = null;
     private static long cachedGreetingAt = 0L;
 
+    /** Рулетка подарков */
+    private static final GiftScreen giftScreen = new GiftScreen();
+    /** Позиция кнопки подарка (обновляется каждый кадр) */
+    private static float giftBtnX = 0f, giftBtnY = 0f, giftBtnW = 28f, giftBtnH = 28f;
+
     private TitleScreenRenderer() {
     }
 
@@ -76,15 +82,21 @@ public final class TitleScreenRenderer {
         float eased = 1f - (1f - openProgress) * (1f - openProgress);
         float offsetY = (1f - eased) * ENTER_OFFSET;
 
+        // Обновляем рулетку
+        giftScreen.update(dt);
+
         RenderContext.enter2D(null, ctx, null);
         try {
             Render2DUtil.beginFrame();
 
             drawBackdrop(ctx, w, h);
-            drawBrand(ctx, w, h, offsetY);
+            drawBrand(ctx, w, h, offsetY, (float) mx, (float) my);
             drawNavigation(ctx, w, h, (float) mx, (float) my - offsetY, offsetY, dt);
             drawFooter(ctx, w, h);
             drawToast(ctx, w, h);
+
+            // Рулетка поверх всего
+            giftScreen.render(ctx, w, h, (float) mx, (float) my);
 
             Render2DUtil.flush();
         } finally {
@@ -113,7 +125,7 @@ public final class TitleScreenRenderer {
 
     // ------------------------------------------------------------ заголовок
 
-    private static void drawBrand(GuiGraphicsExtractor ctx, int w, int h, float offsetY) {
+    private static void drawBrand(GuiGraphicsExtractor ctx, int w, int h, float offsetY, float mx, float my) {
         float margin = marginX(w);
         MsdfFont font = UiFonts.sfPro(700);
         MsdfFont labelFont = UiFonts.sfPro(500);
@@ -170,6 +182,17 @@ public final class TitleScreenRenderer {
                 }
             }
         } catch (Throwable ignored) {}
+
+        // ── Кнопка подарка — правый верх, под короной ──
+        float giftX = w - margin - 44f;
+        float giftY = brandY + brandSize + 18f;
+        giftBtnX = giftX; giftBtnY = giftY;
+        giftBtnW = 28f; giftBtnH = 28f;
+        boolean giftHovered = mx >= giftX && mx <= giftX + giftBtnW
+                && my >= giftY && my <= giftY + giftBtnH;
+        Render2DUtil.texture(giftX, giftY, 28f, 28f, Textures.Icons.GIFT)
+                .color(giftHovered ? 0xFF60A5FA : 0xFF787E88)
+                .draw();
     }
 
     // ------------------------------------------------------------ навигация
@@ -314,6 +337,10 @@ public final class TitleScreenRenderer {
 
     /** @return true — клик поглощён (ванильные кнопки скрыты). */
     public static boolean handleClick(double mx, double my) {
+        // Сначала проверяем кнопку подарка
+        if (giftScreen.handleClick((float) mx, (float) my, giftBtnX, giftBtnY, giftBtnW, giftBtnH)) {
+            return true;
+        }
         for (int i = 0; i < LABELS.length; i++) {
             int ri = i * 4;
             if (mx >= ROW_RECT[ri] && mx <= ROW_RECT[ri] + ROW_RECT[ri + 2]
