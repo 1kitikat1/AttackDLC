@@ -30,19 +30,20 @@ public final class GiftScreen {
     private static final float DEG_PER_SEG  = 360f / NUM_SEG;
     private static final float SPIN_MS      = 4800f;
 
-    private State  state;
-    private float  progress;
-    private float  wheelAngle;
-    private float  targetAngle;
-    private long   spinStartMs;
-    private int    wonDays;
-    private boolean showedResult;
+    private State  state         = State.IDLE;
+    private float  progress      = 0f;
+    private float  wheelAngle    = 0f;
+    private float  targetAngle   = 0f;
+    private long   spinStartMs   = 0L;
+    private int    wonDays       = 0;
+    private boolean showedResult = false;
 
     public GiftScreen() {}
 
     // ─── update ─────────────────────────────────────────────────────
 
     public void update(float dt) {
+        if (state == null) state = State.IDLE;
         switch (state) {
             case OPENING -> {
                 progress = Math.min(1f, progress + dt * 3f);
