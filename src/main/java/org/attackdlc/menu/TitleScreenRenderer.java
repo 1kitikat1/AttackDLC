@@ -135,6 +135,25 @@ public final class TitleScreenRenderer {
                 .style(UiFontStyle.REGULAR)
                 .color(TEXT_MUTED)
                 .draw();
+
+        // Имя аккаунта с короной (если вошёл) — справа, перед версией
+        try {
+            String nick = ru.xd.Session.getName();
+            if (nick != null && !nick.isBlank()) {
+                String role = ru.xd.Session.getRole();
+                String crown = "owner".equalsIgnoreCase(role) ? " 👑" : " 🔑";
+                String label = nick + crown;
+                float nickW = font.measureWidth(label, brandSize, brandSize * UiFontStyle.MEDIUM.letterSpacingEm());
+                float nickX = w - margin - nickW - versionW - 8f;
+                if (nickX > margin + 10f) {
+                    Render2DUtil.text(nickX, brandY, brandSize, label)
+                            .font(font)
+                            .style(UiFontStyle.MEDIUM)
+                            .color(TEXT_PRIMARY)
+                            .draw();
+                }
+            }
+        } catch (Throwable ignored) {}
     }
 
     // ------------------------------------------------------------ навигация

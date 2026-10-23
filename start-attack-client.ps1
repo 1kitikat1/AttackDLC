@@ -39,17 +39,16 @@ if (-not (Test-Path $store)) {
 
 Write-Host "Клиент:  $($jar.FullName)  ($([math]::Round($jar.Length/1MB,1)) МБ)"
 
-# старый мод Dimasik убираем в сторону
+# старый мод Dimasik убираем — он конфликтует с AttackDLC (HoldMyItems)
 Get-ChildItem -Path $store -Filter 'dimasik-*.jar' -File -ErrorAction SilentlyContinue | ForEach-Object {
-   $backup = Join-Path $store ($_.Name -replace '\.jar$', '.jar.bak')
-   Move-Item -LiteralPath $_.FullName -Destination $backup -Force
-   Write-Host "  старый мод убран: $($_.Name) -> $(Split-Path $backup -Leaf)"
+    Remove-Item -LiteralPath $_.FullName -Force
+    Write-Host "  старый мод удалён: $($_.Name)"
 }
 
-# наш мод — в хранилище
-$target = Join-Path $store 'attackdlc-local.jar'
+# наш мод — в хранилище под именем attackdlc-1.0.jar (ожидают ClientStore + Loader)
+$target = Join-Path $store 'attackdlc-1.0.jar'
 Copy-Item -LiteralPath $jar.FullName -Destination $target -Force
-Write-Host "  установлен: attackdlc-local.jar" -ForegroundColor Green
+Write-Host "  установлен: attackdlc-1.0.jar" -ForegroundColor Green
 
 # что теперь лежит в хранилище
 Write-Host ""

@@ -24,8 +24,6 @@
         {"file": "META-INF/jars/lithium-fabric-0.25.1+mc26.2.jar"},
         {"file": "META-INF/jars/modmenu-20.0.0-beta.4.jar"},
         {"file": "META-INF/jars/reeses-sodium-options-fabric-2.2.2+mc26.2.jar"},
-        {"file": "META-INF/jars/sodium-extra-fabric-0.9.1+mc26.2.jar"},
-        {"file": "META-INF/jars/sodium-fabric-0.9.1-beta.3+mc26.2.jar"},
         {"file": "META-INF/jars/waveycapes-fabric-1.10.2-mc26.2.jar"}
     ],
     "mixins": ["attackdlc.mixins.json"],

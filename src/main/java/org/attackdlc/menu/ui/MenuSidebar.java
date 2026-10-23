@@ -210,7 +210,13 @@ public final class MenuSidebar extends Component {
         Render2DUtil.texture(sx(avatarX), sy(avatarY), avatarSize, avatarSize, Textures.Header.PROFILE_AVATAR).draw();
         float nameX = CATEGORY_X + 38f;
         float nameCY = PROFILE_Y + 18f;
-        Render2DUtil.text(sx(nameX), UiFonts.sfProDisplay().centeredTextY(sy(nameCY), px(10f)), px(10f), username)
+        String displayName = username;
+        try {
+            String role = ru.xd.Session.getRole();
+            if ("owner".equalsIgnoreCase(role)) displayName += " 👑";
+            else if ("user".equalsIgnoreCase(role)) displayName += " 🔑";
+        } catch (Throwable ignored) {}
+        Render2DUtil.text(sx(nameX), UiFonts.sfProDisplay().centeredTextY(sy(nameCY), px(10f)), px(10f), displayName)
             .style(UiFontStyle.SEMIBOLD)
             .color(Theme.Colors.PRIMARY)
             .draw();
