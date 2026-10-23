@@ -1,0 +1,1782 @@
+{
+  "features": {
+    "Auto Sprint": {
+      "enabled": false,
+      "visible": true,
+      "binds": [
+        86
+      ],
+      "bindModes": [
+        "TOGGLE"
+      ],
+      "bindVisibility": [
+        true
+      ],
+      "bind": 86,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Don\u0027t Reset Sprint": false
+      }
+    },
+    "AutoJump": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Aura": true,
+        "Negative Effects": true
+      }
+    },
+    "AirStuck": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Aura Range": 3.0
+      }
+    },
+    "Speed": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Mode": "HolyWorld",
+        "Collision Radius": 0.3,
+        "Speed": 0.8,
+        "Only Aura": true
+      }
+    },
+    "ElytraMotion": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Дистанция": 3.0,
+        "Обход": false
+      }
+    },
+    "Fly": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Mode": "Vanilla",
+        "Castle Mode": "Safe",
+        "Speed": 0.05,
+        "Vertical Control": true,
+        "Horizontal": 1.0,
+        "Vertical": 0.6,
+        "Delay": 500.0,
+        "Speed Y": 1.0
+      }
+    },
+    "NoFall": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Distance": 2.0
+      }
+    },
+    "No Web": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Mode": "Old",
+        "Climb Up": true,
+        "Speed": 0.1
+      }
+    },
+    "Strafe": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Speed": 0.32,
+        "Air Control": 0.25
+      }
+    },
+    "HighJump": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Mode": "Boat"
+      }
+    },
+    "GrimFly": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Speed": 0.18,
+        "Vertical Speed": 0.08
+      }
+    },
+    "Inventory Move": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Mode": "Normal"
+      }
+    },
+    "NoPush": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Entity": true,
+        "Blocks": true,
+        "Water": true,
+        "Fishing Hook": true
+      }
+    },
+    "No Slow": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Item Mode": "ReallyWorld",
+        "Sprint": true
+      }
+    },
+    "ElytraBooster": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "movement.elytrabooster.showinfo": true,
+        "movement.elytrabooster.boost": true,
+        "movement.elytrabooster.mode": "Bravo",
+        "movement.elytrabooster.maxspeed": false,
+        "movement.elytrabooster.speedxz": 1.65,
+        "movement.elytrabooster.speedy": 1.59,
+        "movement.elytrabooster.yaw05": 1.6,
+        "movement.elytrabooster.yaw510": 1.62,
+        "movement.elytrabooster.yaw1015": 1.65,
+        "movement.elytrabooster.yaw1520": 1.68,
+        "movement.elytrabooster.yaw2025": 1.74,
+        "movement.elytrabooster.yaw2530": 1.8,
+        "movement.elytrabooster.yaw3035": 1.8,
+        "movement.elytrabooster.yaw3540": 1.8,
+        "movement.elytrabooster.yaw4045": 1.82,
+        "movement.elytrabooster.pitch05": 1.59,
+        "movement.elytrabooster.pitch510": 1.6,
+        "movement.elytrabooster.pitch1015": 1.61,
+        "movement.elytrabooster.pitch1520": 1.62,
+        "movement.elytrabooster.pitch2025": 1.68,
+        "movement.elytrabooster.pitch2530": 1.74,
+        "movement.elytrabooster.pitch3035": 1.95,
+        "movement.elytrabooster.pitch3540": 2.0,
+        "movement.elytrabooster.pitch4045": 2.2
+      }
+    },
+    "SafeWalk": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {}
+    },
+    "BlockOutline": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "render.blockoutline.auroraColor": "#29F294FF",
+        "render.blockoutline.secondaryColor": "#8C59FFFF",
+        "render.blockoutline.starColor": "#D1E0FFFF",
+        "render.blockoutline.ignoreDepth": false,
+        "render.blockoutline.animationSpeed": 15.0,
+        "render.blockoutline.transitionSpeed": 10.0,
+        "render.blockoutline.shaderSpeed": 1.0,
+        "render.blockoutline.shaderIntensity": 1.5
+      }
+    },
+    "WallClimb": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Speed": 0.6,
+        "Mode": "Motion",
+        "Grim Delay": 0.05
+      }
+    },
+    "WaterSpeed": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Boost": 1.05
+      }
+    },
+    "Parkour": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {}
+    },
+    "Timer": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Mode": "Balance",
+        "Speed": 1.05,
+        "Slow Speed": 0.6,
+        "Boost Speed": 1.2,
+        "Balance Cap": 12.0
+      }
+    },
+    "GrimCollide": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Boost": 0.08,
+        "Collision Range": 0.5
+      }
+    },
+    "GrimElytra": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Velocity Start": true,
+        "Airborne Ticks": 3.0
+      }
+    },
+    "Elytra Target": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Перегон": true,
+        "Бинд Перегона": [],
+        "Значение": 3.0,
+        "Дистанция наводки": 32.0,
+        "Замедлять": true,
+        "Бинд Замедления": [],
+        "Радиус": 1.9,
+        "Скорость": 0.2,
+        "Sloth bypa$": false,
+        "Бинд Sloth bypa$": []
+      }
+    },
+    "Aura": {
+      "enabled": false,
+      "visible": true,
+      "binds": [
+        82
+      ],
+      "bindModes": [
+        "TOGGLE"
+      ],
+      "bindVisibility": [
+        true
+      ],
+      "bind": 82,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Mode": "ReallyWorld",
+        "Range": 3.0,
+        "Look Range": 1.5,
+        "Targets": [
+          "Players"
+        ],
+        "Priority": "Distance",
+        "Options": [
+          "Pause While Using"
+        ],
+        "Move Fix": "Focused",
+        "Sprint": "Normal",
+        "Only Crits": true,
+        "Smart Crits": false,
+        "Wall Bypass": false,
+        "RW Wall Bypass": false,
+        "Замедление": "По радиусу",
+        "Тики до удара": 3.0,
+        "Бить токо после перегона": true,
+        "Разворот на элитрах": true,
+        "Показать предикт точку": true
+      }
+    },
+    "Anti Bot": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Mode": "ReallyWorld"
+      }
+    },
+    "Criticals": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Mode": "ReallyWorld"
+      }
+    },
+    "TriggerBot": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Targets": [
+          "Players",
+          "Naked"
+        ],
+        "Checks": [
+          "Disable on death"
+        ],
+        "Attack Range": 3.0,
+        "Min Delay": 0.0,
+        "Max Delay": 1.0,
+        "Only Criticals": false,
+        "Smart Criticals": false,
+        "Through Walls": true,
+        "Wall Bypass": false
+      }
+    },
+    "CrystalAura": {
+      "enabled": true,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Target Range": 15.5,
+        "Place Range": 4.6,
+        "Hit Range": 6.0,
+        "Min Damage": 0.5,
+        "Max Self Damage": 20.0,
+        "Place Delay": 0.0,
+        "Options": [
+          "Auto Switch",
+          "Ignore Walls"
+        ]
+      }
+    },
+    "AutoTotem": {
+      "enabled": true,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Health": 10.5,
+        "Elytra Health": 10.5,
+        "Skip Talismans": true,
+        "Not While Eating": true,
+        "Not With Head": true,
+        "Return Item": true,
+        "Crystal Distance": 4.0,
+        "Crystal Height": 2.5,
+        "TNT Distance": 8.0,
+        "Dangers": [
+          "Obsidian",
+          "Fall",
+          "Spear",
+          "Mace",
+          "Anchor",
+          "Crystal",
+          "Explosion",
+          "Elytra"
+        ]
+      }
+    },
+    "AutoClicker": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Left Mouse": true,
+        "Right Mouse": false,
+        "Mode": "Normal",
+        "Targets": [
+          "Players",
+          "Mobs"
+        ],
+        "CPS": 12.0
+      }
+    },
+    "AutoMace": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Радиус": 4.0,
+        "Мин. высота": 2.0,
+        "Макс. высота": 8.0,
+        "Возвращать предмет": true
+      }
+    },
+    "HitBoxes": {
+      "enabled": false,
+      "visible": true,
+      "binds": [
+        0
+      ],
+      "bindModes": [
+        "TOGGLE"
+      ],
+      "bindVisibility": [
+        true
+      ],
+      "bind": 0,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Size": 3.0,
+        "With Aura": false,
+        "Show Size": false,
+        "Y Size": false
+      }
+    },
+    "Velocity": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {}
+    },
+    "BowAimbot": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Search Distance": 16.0,
+        "Target Type": [
+          "Players",
+          "Mobs",
+          "Animals"
+        ],
+        "Prediction": true,
+        "Wall Check": true,
+        "Target Indicator": true
+      }
+    },
+    "AutoExplosion": {
+      "enabled": true,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Trigger": "Click",
+        "Range": 4.5,
+        "Hits": 4.0,
+        "Auto Switch": true,
+        "Rotate": true
+      }
+    },
+    "HitSound": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Sound": "Pop",
+        "Volume": 1.0,
+        "Pitch": 1.2
+      }
+    },
+    "Reach": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Entity Range": 3.5,
+        "Block Range": 5.0
+      }
+    },
+    "ShiftTap": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Duration": 120.0
+      }
+    },
+    "Aim Assistant": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Targets": [
+          "Players"
+        ],
+        "Through Walls": false,
+        "Threshold": 5.0,
+        "Weapon Only": true
+      }
+    },
+    "Lunge Boost": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Boost Interval": 5.0,
+        "Hit Delay": 0.0,
+        "Only While Moving": false
+      }
+    },
+    "HUD": {
+      "enabled": true,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Elements": [
+          "Watermark",
+          "Coordinates",
+          "Keybinds",
+          "Potions",
+          "Target",
+          "Notifications",
+          "Hotbar",
+          "ArmorHud",
+          "QuickUse",
+          "StaffList"
+        ],
+        "Size": 100.0,
+        "Glass blur": 50.0,
+        "Chat Size": 100.0
+      }
+    },
+    "Arrows": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "render.arrows.radius": 10.0,
+        "render.arrows.scale": 1.0,
+        "render.arrows.showDistance": false,
+        "render.arrows.showNames": true,
+        "render.arrows.onlyFriend": false,
+        "render.arrows.filled": false,
+        "render.arrows.ignoreNaked": false,
+        "render.arrows.colorMode": "Sync",
+        "render.arrows.color": "#FFFFFFFF",
+        "render.arrows.armorColorEnabled": false,
+        "render.arrows.armorColor": "#FF4040FF"
+      }
+    },
+    "EntityESP": {
+      "enabled": false,
+      "visible": true,
+      "binds": [
+        71
+      ],
+      "bindModes": [
+        "TOGGLE"
+      ],
+      "bindVisibility": [
+        true
+      ],
+      "bind": 71,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Targets": [
+          "Players",
+          "Hostile"
+        ],
+        "Box Mode": "Corners",
+        "Rounded": false,
+        "Health Bar": true,
+        "Box": true,
+        "Distance": 64.0,
+        "Color Mode": "Sync",
+        "Glow Color": "#277EFFFF"
+      }
+    },
+    "NameTags": {
+      "enabled": true,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Scale": 1.0,
+        "Privilege": true,
+        "Health": true,
+        "Items": true,
+        "Item Highlight": true,
+        "Ground Items": true,
+        "Distance": 64.0
+      }
+    },
+    "HitParticles": {
+      "enabled": true,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "render.particles.texture": "Random",
+        "render.particles.hitamount": 15.0,
+        "render.particles.lifetime": 60.0,
+        "render.particles.size": 0.15,
+        "render.particles.color": "#FFFFFFFF",
+        "render.particles.natural": false,
+        "render.particles.glow": 0.0
+      }
+    },
+    "JumpCircles": {
+      "enabled": true,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Lifetime": 800.0,
+        "Radius": 1.5,
+        "Wave Effect": false,
+        "Wave Strength": 0.6,
+        "Wave Radius": 3.0,
+        "Wave Time": 600.0,
+        "Glow": false,
+        "Distortion": 1.0,
+        "Color Mode": "Sync",
+        "Color": "#7765FFFF"
+      }
+    },
+    "KillEffect": {
+      "enabled": true,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "visual.killeffect.amount": 90.0,
+        "visual.killeffect.hold": 0.8,
+        "visual.killeffect.fade": 1.0,
+        "visual.killeffect.scatter": 1.0,
+        "visual.killeffect.gravity": 1.2,
+        "visual.killeffect.size": 0.09,
+        "visual.killeffect.color": "#6CF9B0FF",
+        "visual.killeffect.glow": 0.75
+      }
+    },
+    "Trajectories": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Predict Trajectory": [
+          "Self"
+        ],
+        "Show Owner": true
+      }
+    },
+    "WorldParticles": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "render.particles.texture": "Random",
+        "render.particles.spawnrate": 1.0,
+        "render.particles.radius": 40.0,
+        "render.particles.lifetime": 60.0,
+        "render.particles.size": 0.15,
+        "render.particles.max": 100.0,
+        "render.particles.color": "#FFFFFFFF",
+        "render.particles.natural": false,
+        "render.particles.glow": 0.0
+      }
+    },
+    "PopChams": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "render.popchams.blending": true,
+        "render.popchams.textured": false,
+        "render.popchams.color": "#FFFFFFFF",
+        "render.chams.glowRadius": 6.0
+      }
+    },
+    "See Invisible": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Alpha": 0.4
+      }
+    },
+    "Removals": {
+      "enabled": true,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Overlay": [
+          "Fire",
+          "Bad Effects"
+        ],
+        "World": [
+          "Weather"
+        ],
+        "Sounds": []
+      }
+    },
+    "Crosshair": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "render.crosshair.type": "Default",
+        "render.crosshair.colorMode": "Sync",
+        "render.crosshair.color": "#FFFFFFFF",
+        "render.crosshair.radius": 12.0,
+        "render.crosshair.gap": 2.0,
+        "render.crosshair.length": 5.0,
+        "render.crosshair.thickness": 2.0,
+        "render.crosshair.cooldown": true,
+        "render.crosshair.cooldownMultiplier": 8.0,
+        "render.crosshair.outline": true,
+        "render.crosshair.tmode": false,
+        "render.crosshair.centerdot": true,
+        "render.crosshair.centersize": 2.0
+      }
+    },
+    "SwingAnimation": {
+      "enabled": true,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Mode": "Slice",
+        "Speed": 6.0
+      }
+    },
+    "ViewModel": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Right X": 0.0,
+        "Right Y": 0.0,
+        "Right Z": 0.0,
+        "Left X": 0.0,
+        "Left Y": 0.0,
+        "Left Z": 0.0
+      }
+    },
+    "ShaderHands": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "render.armtweaks.fill.effects": [
+          "Fill",
+          "Glow"
+        ],
+        "render.armtweaks.fill.colorMode": "Sync",
+        "render.armtweaks.fill.color": "#7986CBFF",
+        "render.armtweaks.fill.opacity": 0.19,
+        "render.armtweaks.fill.type": "Glass",
+        "render.armtweaks.fill.plasma.speed": 1.0,
+        "render.armtweaks.fill.glass.blur": 19.0,
+        "render.armtweaks.fill.glass.mirror": true,
+        "render.armtweaks.fill.glow.radius": 18.0,
+        "render.armtweaks.fill.glow.strength": 1.0,
+        "render.armtweaks.fill.glow.flame": true,
+        "render.armtweaks.fill.glow.flameSpeed": 1.1,
+        "render.armtweaks.fill.glow.flameTrail": 1.0,
+        "render.armtweaks.fill.outline.thickness": 1.5,
+        "render.armtweaks.fill.bothHands": true
+      }
+    },
+    "BlockESP": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Color": "#7FF2FFFF",
+        "Range": 32.0,
+        "Notify": false
+      }
+    },
+    "TargetESP": {
+      "enabled": true,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Mode": "Deadheads",
+        "Color Mode": "Sync",
+        "Color": "#00FF88FF"
+      }
+    },
+    "Chams": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "render.chams.targets": [
+          "Players",
+          "Hostile"
+        ],
+        "render.chams.distance": 96.0,
+        "render.chams.effect": [
+          "Shader Fill",
+          "Glow"
+        ],
+        "render.chams.mode": "External",
+        "render.chams.originalTexture": false,
+        "render.chams.shader": "Plasma",
+        "render.chams.shader.speed": 4.0,
+        "render.chams.colorMode": "Sync",
+        "render.chams.color": "#7986CBFF",
+        "render.chams.colorFriends": true,
+        "render.chams.friendColor": "#4CAF50FF",
+        "render.chams.opacity": 1.0,
+        "render.chams.thickness": 1.5,
+        "render.chams.glowRadius": 1.3,
+        "render.chams.glowStrength": 0.33,
+        "render.chams.blending": true,
+        "render.chams.glassBlur": 0.0,
+        "render.chams.mirror": true
+      }
+    },
+    "HoldMyItems": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {}
+    },
+    "ItemPhysics": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {}
+    },
+    "WorldTweaks": {
+      "enabled": true,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "render.worldtweaks.changetime": true,
+        "render.worldtweaks.timeofday": "Sunrise",
+        "render.worldtweaks.fogcolor": false,
+        "render.worldtweaks.fogcolor.distance": 90.0,
+        "render.worldtweaks.fogcolor.colorMode": "Sync",
+        "render.worldtweaks.fogcolor.color": "#6E74E3FF",
+        "render.worldtweaks.sky": true,
+        "render.worldtweaks.sky.effect": "Deep Space",
+        "render.worldtweaks.sky.color1": "#7986CBFF",
+        "render.worldtweaks.sky.color2": "#7986CBFF",
+        "render.worldtweaks.sky.speed": 4.0,
+        "render.worldtweaks.sky.intensity": 3.0,
+        "render.worldtweaks.saturation": false,
+        "render.worldtweaks.saturation.amount": 0.5,
+        "render.worldtweaks.changeworldcolor": false,
+        "render.worldtweaks.changeworldcolor.mode": "Sync",
+        "render.worldtweaks.changeworldcolor.color": "#FFFFFFFF"
+      }
+    },
+    "AtmoDawnFog": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "render.atmodawnfog.mode": "Dusk",
+        "render.atmodawnfog.density": 0.35,
+        "render.atmodawnfog.scatterheight": 76.0,
+        "render.atmodawnfog.godrays": 0.75,
+        "render.atmodawnfog.softness": 0.6,
+        "render.atmodawnfog.sunglow": 0.85,
+        "render.atmodawnfog.rainbow": true,
+        "render.atmodawnfog.rainbowbrightness": 0.55,
+        "render.atmodawnfog.rainbowsize": 54.0,
+        "render.atmodawnfog.dawncolor": "#FFAD7AFF",
+        "render.atmodawnfog.stars": 0.85,
+        "render.atmodawnfog.aurora": 0.6
+      }
+    },
+    "NameProtect": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Name": "XRoseUser"
+      }
+    },
+    "NoDelays": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Jump": true,
+        "Right Click": false,
+        "Experience Bottles Only": false,
+        "Block Break": false
+      }
+    },
+    "DeathCoords": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {}
+    },
+    "XCarry": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {}
+    },
+    "Auction Helper": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Подсвечивать 3 слота": true,
+        "Цена за штуку": true
+      }
+    },
+    "ServerHelper": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Server": "FunTime",
+        "funtime.Дезориентация": -1,
+        "funtime.Явная пыль": -1,
+        "funtime.Божья аура": -1,
+        "funtime.Снежок заморозка": -1,
+        "funtime.Огненный смерч": -1,
+        "funtime.Пласт": -1,
+        "funtime.Трапка": -1,
+        "funtime.Зелье силы": -1,
+        "funtime.Зелье невидимости": -1,
+        "funtime.Зелье скорости": -1,
+        "funtime.Зелье прыгучести": -1,
+        "funtime.Зелье регенерации": -1,
+        "funtime.Зелье ночного зрения": -1,
+        "funtime.Зелье огнестойкости": -1,
+        "funtime.Зелье водного дыхания": -1,
+        "funtime.Хлопушка": -1,
+        "funtime.Святая вода": -1,
+        "funtime.Зелье Гнева": -1,
+        "funtime.Зелье Палладина": -1,
+        "funtime.Зелье Ассасина": -1,
+        "funtime.Зелье Радиации": -1,
+        "funtime.Снотворное": -1,
+        "holyworld.Зелье победителя": -1,
+        "holyworld.Улучшенное зелье силы": -1,
+        "holyworld.Улучшенное зелье скорости": -1,
+        "holyworld.Стан": -1,
+        "holyworld.Взрывная трапка": -1,
+        "holyworld.Трапка": -1,
+        "holyworld.Тнт-Пушка": -1,
+        "holyworld.Динамит": -1,
+        "holyworld.Динамит A": -1,
+        "holyworld.Динамит B": -1,
+        "holyworld.C4": -1,
+        "holyworld.Разрывная волна": -1,
+        "holyworld.Динамит Б2": -1,
+        "holyworld.Стиллер": -1,
+        "holyworld.Надёжный стиллер": -1,
+        "holyworld.Ледяная волна": -1,
+        "holyworld.Особый компас": -1,
+        "holyworld.Зачарованное яблоко": -1,
+        "holyworld.Универсальный ключ": -1,
+        "holyworld.Vex Spawn Egg": -1,
+        "holyworld.Золотой спавнер": -1,
+        "holyworld.Уникальный приват": -1,
+        "holyworld.Открыть рюкзак": -1,
+        "reallyworld.Анти полет": -1,
+        "reallyworld.Свиток опыта": -1,
+        "reallyworld.Зелье Гринча": -1,
+        "reallyworld.AutoShift (Шифт для шара)": -1,
+        "reallyworld.Новогодний ужас": -1,
+        "reallyworld.Эссенция кромешника": -1,
+        "reallyworld.Снежок": -1,
+        "reallyworld.Трапка": -1,
+        "reallyworld.autofixall": false
+      }
+    },
+    "UseTracker": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Снос тотема": true,
+        "Полученные зелья": true,
+        "Съеденный предмет": true,
+        "Радиус зелий": 100.0,
+        "Вывод": [
+          "Чат"
+        ],
+        "Цель": "Все"
+      }
+    },
+    "AutoTpaAccept": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Friends Only": false,
+        "Avoid Combat": true
+      }
+    },
+    "AutoDuel": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Command": "duel accept",
+        "Friends Only": false
+      }
+    },
+    "Elytra Helper": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Mode": "Aggressive",
+        "Swap Bind": -1,
+        "Firework Bind": -1,
+        "Auto Takeoff": false,
+        "Auto Sprint": false,
+        "Auto Firework": false
+      }
+    },
+    "ChestStealer": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Delay": 80.0
+      }
+    },
+    "AutoSwap": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Key": 82,
+        "Mode": "Wheel",
+        "Slots": 4.0,
+        "Strict": false,
+        "First Item": "Totem",
+        "Second Item": "Head",
+        "Auto Damage": false,
+        "Auto Damage Conditions": [
+          "Target Low HP"
+        ],
+        "Low HP Threshold": 10.0
+      }
+    },
+    "Item Scroller": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Scroll Delay": 50.0
+      }
+    },
+    "AutoRespawn": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Respawn Delay": 0.0,
+        "Teleport Home": false,
+        "Command": "/home"
+      }
+    },
+    "FarmHelper": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "AutoInvisibility": false,
+        "AutoEat": false,
+        "AutoClicker": false,
+        "ExpBottleFill": false,
+        "Min Duration": 10.0,
+        "Hunger": 8.0,
+        "Cooldown (ms)": 100.0,
+        "ExpBottleFill Level": 15.0
+      }
+    },
+    "Discord RPC": {
+      "enabled": false,
+      "visible": false,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {}
+    },
+    "FullBright": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "render.fullbright.dynamic": true,
+        "render.fullbright.brightness": 0.5,
+        "render.fullbright.minBrightness": 0.0,
+        "render.fullbright.maxBrightness": 10.0,
+        "render.fullbright.lightsStyle": "Both",
+        "render.fullbright.lightIntensity": 1.0,
+        "render.fullbright.lightRadius": 1.0,
+        "render.fullbright.lightOthers": true,
+        "render.fullbright.lightItems": true
+      }
+    },
+    "Free Cam": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Speed": 2.0,
+        "Freeze": false
+      }
+    },
+    "FreeLook": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Клавиша": [
+          342
+        ]
+      }
+    },
+    "NoJumpBoost": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {}
+    },
+    "AutoTool": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Use Inventory": true,
+        "Mode": "Silent"
+      }
+    },
+    "ClickPearl": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Key": -1
+      }
+    },
+    "FastBreak": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Only While Mining": true
+      }
+    },
+    "MultiAction": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {}
+    },
+    "WindJump": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Mode": "Bypass",
+        "Key": -1
+      }
+    },
+    "PveManager": {
+      "visible": true,
+      "settings": {
+        "Rotate": true,
+        "Server Profile": "Auto",
+        "Home Name": "",
+        "Clan Name": "",
+        "Anarchy": 1.0,
+        "Minimum Health": 12.0,
+        "Minimum Tool Durability": 15.0,
+        "Pause Near Players": true,
+        "Player Radius": 16.0,
+        "Debug Logging": true,
+        "Current State": false
+      }
+    },
+    "AutoFish": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Save Rod": false
+      }
+    },
+    "AutoArmor": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Swap Delay": 100.0
+      }
+    },
+    "AutoPotion": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Potions": [],
+        "Only PvP": false
+      }
+    },
+    "AutoUse": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Features": [
+          "Auto Eat"
+        ],
+        "Ignore Golden Apples": false,
+        "Ignore Enchanted Golden Apples": false
+      }
+    },
+    "AutoGapple": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Health": 15.0,
+        "Golden Apples": true,
+        "Enchanted Golden Apples": true
+      }
+    },
+    "AntiAFK": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Action Interval": 20.0,
+        "Turn Head": true,
+        "Jump": true,
+        "Send Chat Message": false,
+        "Chat Text": "Still here"
+      }
+    },
+    "AutoLeave": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Action": "Server Command",
+        "Command": "/hub",
+        "Conditions": [
+          "Low Health",
+          "Moderator",
+          "Nearby Player"
+        ],
+        "Minimum Health": 5.0,
+        "Trigger Distance": 10.0,
+        "Cooldown": 5.0
+      }
+    },
+    "AutoAuth": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Mode": "Generated",
+        "Cooldown": 3.0
+      }
+    },
+    "MineHelper": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Helpers": [
+          "Clean Inventory",
+          "Next Mine",
+          "Save Pickaxe"
+        ],
+        "Cleanup At Free Slots": 2.0,
+        "Drop Interval": 1.0,
+        "Trash Items": "cobblestone,cobbled_deepslate,dirt,gravel,andesite,diorite,granite,tuff,netherrack,deepslate,stone"
+      }
+    },
+    "AutoTpLoot": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Range": 128.0,
+        "Max Speed": 35.0,
+        "Acceleration": 0.5,
+        "Return Radius": 0.5,
+        "Target Timeout": 15.0
+      }
+    },
+    "AppleFarmer": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Take Bones": false,
+        "Drop Junk": false,
+        "Farm Position": "auto",
+        "Apple Storage": "auto",
+        "Bone Storage": "auto",
+        "Use Home Command": false,
+        "Farm Radius": 8.0,
+        "Vertical Scan": 10.0,
+        "Trees Per Cycle": 4.0,
+        "Max Blocks Per Cycle": 192.0,
+        "Bone Meal Per Cycle": 48.0,
+        "Bone Meal Reserve": 16.0,
+        "Sapling Reserve": 16.0,
+        "Deposit Apple Stacks": 4.0,
+        "Repair Below": 20.0,
+        "Repair To": 90.0,
+        "Buy XP Bottles": false,
+        "XP Bottle Buy Command": ""
+      }
+    },
+    "AutoCrafter": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Craft": "Enchanted Golden Apple",
+        "Auto Sell": true,
+        "Take from Crafter Chest": false
+      }
+    },
+    "AuctionRelist": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {}
+    },
+    "ClanInvest": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Currency Threshold": "1000000",
+        "Invest Percentage": 30.0
+      }
+    },
+    "GriefJoiner": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Mode": "ReallyWorld",
+        "Mega": false,
+        "Grief Number": "1"
+      }
+    },
+    "AutoPottBot": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Potion": "Strength",
+        "Click Delay": 120.0,
+        "Brewing Stand Radius": 4.5,
+        "Fill Bottles": true,
+        "Water Buffer": 12.0,
+        "Deposit to Chest": true,
+        "Transition Delay": 500.0,
+        "Rotation Random": 1.5,
+        "Aim Threshold": 1.5
+      }
+    }
+  }
+}

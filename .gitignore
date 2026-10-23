@@ -10,13 +10,3 @@ build/
 # OS
 .DS_Store
 Thumbs.db
-
-# Native guard build artifacts (keep cpp, exclude .lib/.exp)
-src/main/resources/win32-x86-64/attackdlc-guard.lib
-src/main/resources/win32-x86-64/attackdlc-guard.exp
-
-# ProGuard cache
-build/obf/
-
-# JAR in store (managed by start-attack-client.ps1, not git)
-src/main/resources/win32-x86-64/*.jar
