@@ -72,8 +72,8 @@ public final class WatermarkElement extends HudElement {
             String name = Class.forName("ru.xd.Session").getMethod("getName").invoke(null) instanceof String s ? s : null;
             if (name != null && !name.isBlank()) {
                 String role = Class.forName("ru.xd.Session").getMethod("getRole").invoke(null) instanceof String r ? r : "";
-                if ("owner".equalsIgnoreCase(role)) return name + " 👑";
-                if ("user".equalsIgnoreCase(role))   return name + " 🔑";
+                if ("owner".equalsIgnoreCase(role)) return name;
+                if ("user".equalsIgnoreCase(role))   return name;
                 return name;
             }
         } catch (Throwable ignored) {
@@ -158,6 +158,18 @@ public final class WatermarkElement extends HudElement {
                     .color(ColorUtil.multiplyAlpha(Theme.Colors.SECONDARY, alpha))
                     .draw();
             ox += font.measureWidth(this.userText, textSize, textSize * UiFontStyle.SEMIBOLD.letterSpacingEm());
+
+            // Корона-иконка рядом с именем
+            try {
+                String role = Class.forName("ru.xd.Session").getMethod("getRole").invoke(null) instanceof String r ? r : "";
+                boolean isOwner = "owner".equalsIgnoreCase(role);
+                float iconSize = 10f * unit;
+                Render2DUtil.texture(ox + GAP * unit / 2f, centerY - iconSize / 2f, iconSize, iconSize,
+                        Textures.Icons.CROWN)
+                        .color(ColorUtil.multiplyAlpha(isOwner ? Theme.getAccent() : Theme.Colors.SECONDARY, alpha))
+                        .draw();
+                ox += iconSize + GAP * unit / 2f;
+            } catch (Throwable ignored) {}
             ox = this.divider(ox, centerY, 11.0F, GAP, unit, alpha);
         }
 

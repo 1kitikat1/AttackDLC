@@ -98,6 +98,7 @@ public final class Textures {
         public static final Identifier USER_ROUND_PLUS = Textures.svg("icons/user_round_plus");
         public static final Identifier ZAP = Textures.svg("icons/zap");
         public static final Identifier STAR_5 = Textures.svg("icons/star_5");
+        public static final Identifier CROWN = Textures.svg("icons/crown");
 
         private Icons() {
         }

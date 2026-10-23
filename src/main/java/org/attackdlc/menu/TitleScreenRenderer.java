@@ -10,6 +10,7 @@ import net.minecraft.client.gui.screens.worldselection.SelectWorldScreen;
 import org.attackdlc.context.RenderContext;
 import org.attackdlc.menu.accounts.AccountsScreen;
 import org.attackdlc.utils.ColorUtil;
+import org.attackdlc.utils.render.Textures;
 import org.attackdlc.utils.render.Theme;
 import org.attackdlc.utils.render.gui.MsdfFont;
 import org.attackdlc.utils.render.gui.Render2DUtil;
@@ -141,16 +142,23 @@ public final class TitleScreenRenderer {
             String nick = ru.xd.Session.getName();
             if (nick != null && !nick.isBlank()) {
                 String role = ru.xd.Session.getRole();
-                String crown = "owner".equalsIgnoreCase(role) ? " 👑" : " 🔑";
-                String label = nick + crown;
-                float nickW = font.measureWidth(label, brandSize, brandSize * UiFontStyle.MEDIUM.letterSpacingEm());
+                float nickW = font.measureWidth(nick, brandSize, brandSize * UiFontStyle.MEDIUM.letterSpacingEm());
                 float nickX = w - margin - nickW - versionW - 8f;
                 if (nickX > margin + 10f) {
-                    Render2DUtil.text(nickX, brandY, brandSize, label)
+                    Render2DUtil.text(nickX, brandY, brandSize, nick)
                             .font(font)
                             .style(UiFontStyle.MEDIUM)
                             .color(TEXT_PRIMARY)
                             .draw();
+                    // Корона-иконка
+                    try {
+                        boolean isOwner = "owner".equalsIgnoreCase(role);
+                        float crownSize = brandSize * 0.85f;
+                        Render2DUtil.texture(nickX + nickW + 3f, brandY + (brandSize - crownSize) / 2f, crownSize, crownSize,
+                                Textures.Icons.CROWN)
+                                .color(isOwner ? Theme.getAccent() : 0xFFA6ACB6)
+                                .draw();
+                    } catch (Throwable ignored) {}
                 }
             }
         } catch (Throwable ignored) {}
