@@ -1,0 +1,180 @@
+plugins {
+    id 'fabric-loom' version '1.17.12'
+    id 'maven-publish'
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+    archivesName = project.archives_base_name
+}
+
+repositories {
+    mavenCentral()
+    maven { name = "Fabric"; url = "https://maven.fabricmc.net/" }
+    maven { name = "Sponge Snapshots"; url = "https://repo.spongepowered.org/repository/maven-public/" }
+}
+
+loom {
+    noIntermediateMappings()
+    runs {
+        client {
+            property "fabric.runtimeMappingNamespace", "named"
+        }
+    }
+}
+
+def generatedMappings = file("${layout.buildDirectory.get().asFile}/generated/mappings/empty-mappings.jar")
+if (!generatedMappings.exists()) {
+    generatedMappings.parentFile.mkdirs()
+    new java.util.zip.ZipOutputStream(new FileOutputStream(generatedMappings)).withCloseable { zip ->
+        zip.putNextEntry(new java.util.zip.ZipEntry("mappings/mappings.tiny"))
+        zip.write("tiny\t2\t0\tofficial\tnamed\tintermediary\n".getBytes(java.nio.charset.StandardCharsets.UTF_8))
+        zip.closeEntry()
+    }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings files(generatedMappings)
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    implementation files('src/main/resources/META-INF/jars/baritone-fabric-1.15.0-10-g57758940+mc26.2-blade1.jar')
+
+    compileOnly 'org.jetbrains:annotations:26.0.1'
+    compileOnly 'org.projectlombok:lombok:1.18.36'
+    compileOnly 'com.google.errorprone:error_prone_annotations:2.36.0'
+    compileOnly 'biz.aQute.bnd:biz.aQute.bnd.annotation:7.1.0'
+
+    // JNA для native-guard
+    implementation 'net.java.dev.jna:jna:5.14.0'
+}
+
+processResources {
+    inputs.property "version", project.version
+    inputs.property "minecraft_version", project.minecraft_version
+    inputs.property "loader_version", project.loader_version
+    filteringCharset "UTF-8"
+    // Исключаем cpp-исходники из финального jar
+    exclude 'cpp/**'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 25
+    it.options.encoding = "UTF-8"
+    it.options.compilerArgs += ['-proc:none']
+    exclude 'module-info.java'
+    exclude '**/package-info.java'
+}
+
+java {
+    // Без sources-jar в релизе — исходники не должны попадать в распространяемый файл
+    sourceCompatibility = JavaVersion.toVersion(25)
+    targetCompatibility = JavaVersion.toVersion(25)
+}
+
+jar {
+    from("LICENSE") {
+        rename { "${it}_${project.base.archivesName.get()}"}
+    }
+    // Явно добавляем native DLL в jar — Fabric Loom по умолчанию excludes .dll из ресурсов
+    from('src/main/resources') {
+        include 'win32-x86-64/attackdlc-guard.dll'
+        include 'win32-x86/attackdlc-guard.dll'
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    }
+}
+
+// ─── Протект: генерация хешей классов для integrity check ─────────────────
+
+task dumpClassHashes {
+    group = 'protect'
+    description = 'Выводит SHA-256 хеши ключевых классов — вставить в NativeGuard.java'
+    doLast {
+        // Fabric Loom кладёт jar в devlibs, не в libs
+        def jarFile = file("${layout.buildDirectory.get().asFile}/devlibs/${project.base.archivesName.get()}-${project.version}-dev.jar")
+        if (!jarFile.exists()) jarFile = jar.archiveFile.get().asFile
+        def zip = new java.util.zip.ZipFile(jarFile)
+        def entries = [
+            'org/attackdlc/license/LicenseManager.class',
+            'org/attackdlc/license/Hwid.class',
+            'org/attackdlc/AttackDlcClient.class'
+        ]
+        entries.each { path ->
+            def e = zip.getEntry(path)
+            if (!e) { println "[MISSING] $path"; return }
+            def md = java.security.MessageDigest.getInstance('SHA-256')
+            zip.getInputStream(e).withCloseable { is ->
+                byte[] b = new byte[8192]
+                int n
+                while ((n = is.read(b)) != -1) md.update(b, 0, n)
+            }
+            def hex = md.digest().collect { String.format('%02x', it) }.join()
+            println "$path"
+            println "  → $hex"
+            println ""
+        }
+        zip.close()
+    }
+}
+
+// ─── Протект: обфускация имён через ProGuard ──────────────────────────────
+
+configurations { proguardLib }
+
+dependencies {
+    proguardLib 'com.guardsquare:proguard-base:7.5.0'
+}
+
+def obfOut    = file("${layout.buildDirectory.get().asFile}/obf")
+def obfJar    = file("${obfOut}/${project.base.archivesName.get()}-${project.version}.jar")
+
+task obfuscate(type: JavaExec) {
+    dependsOn jar
+    group = 'protect'
+    description = 'Обфускация jar через ProGuard'
+
+    mainClass = 'proguard.ProGuard'
+
+    def inputJar = jar.archiveFile.get().asFile
+    def cacheDir = file("${obfOut}/cache")
+    cacheDir.mkdirs()
+
+    classpath = configurations.proguardLib
+    args '-injars',       inputJar.absolutePath
+    args '-outjars',      obfJar.absolutePath
+    args '-libraryjars',  inputJar.absolutePath
+    args '-target',       '25'
+    args '-optimizationpasses', '3'
+    args '-dontpreverify'
+    args '-dontshrink'
+    args '-dontskipnonpubliclibraryclasses'
+    args '-dontskipnonpubliclibraryclassmembers'
+    args '-verbose'
+
+    // Сохраняем entrypoint и mixin-классы
+    args '-keep', 'class org.attackdlc.AttackDlcClient { public void onInitialize(); }'
+    args '-keep', 'class org.attackdlc.license.* { *; }'
+    args '-keep', 'class ru.xd.Session { *; }'
+    args '-keep', 'class org.attackdlc.mixin.* { *; }'
+    args '-keep', 'class org.attackdlc.feature.impl.* { *; }'
+
+    // Классы с аннотацией @invoke — обфусцируем методы, но не сам класс
+    args '-keepclassmembers,allowshrinking,allowobfuscation class * { @sdk.api.invoke.api.invoke <methods>; }'
+
+    // Mapping для отладки
+    args '-printmapping', file("${cacheDir}/mapping.txt").absolutePath
+    args '-printseeds',   file("${cacheDir}/seeds.txt").absolutePath
+}
+
+// ─── Сборка release-jar (обфусцированный, без sources) ───────────────────
+
+task releaseJar(type: Copy) {
+    dependsOn jar
+    group = 'distribution'
+    description = 'Релизная сборка: jar без sources, с протектом'
+    from jar.archiveFile.get().asFile.parent
+    include "${project.base.archivesName.get()}-${project.version}.jar"
+    into file("${layout.buildDirectory.get().asFile}/release")
+}

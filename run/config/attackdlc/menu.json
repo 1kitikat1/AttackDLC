@@ -1,0 +1,56 @@
+{
+  "configFavorites": [],
+  "selectedConfig": "kitikat",
+  "configsOldestFirst": false,
+  "accentIndex": 2,
+  "language": "russian",
+  "roundedMode": 0,
+  "hudScale100Migrated": true,
+  "hud.watermark.x": 0.010726954,
+  "hud.watermark.y": 0.005366789,
+  "hud.coords.x": 0.9429739,
+  "hud.coords.y": 0.05224525,
+  "hud.stafflist.x": 0.3482649,
+  "hud.stafflist.y": 0.032386445,
+  "hud.keybinds.x": 0.26048604,
+  "hud.keybinds.y": 0.026001353,
+  "hud.target.x": 0.09779682,
+  "hud.target.y": 0.14306135,
+  "hud.potions.x": 0.864142,
+  "hud.potions.y": 0.17399651,
+  "uiScale": 1.323,
+  "accounts": [
+    {
+      "name": "Im_kittt",
+      "activity": "Never played",
+      "avatar": 3,
+      "pinned": false
+    },
+    {
+      "name": "PixelStrike52",
+      "activity": "Never played",
+      "avatar": 2,
+      "pinned": false
+    },
+    {
+      "name": "kitikkatkk",
+      "activity": "Never played",
+      "avatar": 1,
+      "pinned": false
+    },
+    {
+      "name": "AttackDLC",
+      "activity": "Playing now",
+      "avatar": 0,
+      "pinned": false
+    }
+  ],
+  "selectedAccount": "Im_kittt",
+  "accountsOldestFirst": false,
+  "hud.armor_hud.x": 0.014356929,
+  "hud.armor_hud.y": 0.47251865,
+  "hud.mine_timer.x": 0.527768,
+  "hud.mine_timer.y": 0.029993108,
+  "hud.notifications.x": 0.5,
+  "hud.notifications.y": 0.14941983
+}
