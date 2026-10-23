@@ -447,7 +447,7 @@
       }
     },
     "CrystalAura": {
-      "enabled": true,
+      "enabled": false,
       "visible": true,
       "binds": [
         67
@@ -498,14 +498,14 @@
         "Crystal Height": 2.5,
         "TNT Distance": 8.0,
         "Dangers": [
+          "Anchor",
+          "Mace",
           "Spear",
           "Fall",
           "Obsidian",
           "Elytra",
           "Explosion",
-          "Crystal",
-          "Anchor",
-          "Mace"
+          "Crystal"
         ]
       }
     },
@@ -595,7 +595,7 @@
       }
     },
     "AutoExplosion": {
-      "enabled": true,
+      "enabled": false,
       "visible": true,
       "binds": [
         67
@@ -909,9 +909,9 @@
       "bindMode": "TOGGLE",
       "settings": {
         "Overlay": [
+          "Bad Effects",
           "Fire",
-          "Shaking",
-          "Bad Effects"
+          "Shaking"
         ],
         "World": [
           "Weather"
@@ -1673,9 +1673,9 @@
       "bindMode": "TOGGLE",
       "settings": {
         "Helpers": [
+          "Clean Inventory",
           "Save Pickaxe",
-          "Next Mine",
-          "Clean Inventory"
+          "Next Mine"
         ],
         "Cleanup At Free Slots": 2.0,
         "Drop Interval": 1.0,
