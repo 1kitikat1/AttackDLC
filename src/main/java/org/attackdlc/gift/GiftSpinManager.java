@@ -11,8 +11,8 @@ import java.time.Duration;
 /**
  * Управление розыгрышами подарков.
  *
- * <p>Каждый HWID может крутить рулетку раз в неделю (7 дней).
- * Шансы: 0 дн — 60%, 1 дн — 15%, 3 дн — 14%, 6 дн — 1%.</p>
+ * <p>Шансы: 0д — 60%, 1д — 15%, 3д — 14%, 6д — 1%.
+ * Кулдаун: 7 дней на HWID (хранится в Firebase).</p>
  */
 public final class GiftSpinManager {
 
@@ -29,28 +29,38 @@ public final class GiftSpinManager {
     public static Integer   lastDays()     { return lastDays; }
     public static long      lastResultAt() { return lastResultAt; }
 
-    /** Можно ли крутить сейчас? Проверяет кулдаун в Firebase. */
+    /**
+     * Проверяет, можно ли крутить сейчас.
+     * Возвращает false если кулдаун ещё не истёк.
+     * statusText содержит текст для отображения (например "кулдаун: 3ч").
+     */
     public static synchronized boolean canSpin(String hwid) {
         try {
             if (hwid == null || hwid.isBlank()) return false;
             String data = fetch("gift_spins/" + sha256(hwid) + ".json");
             if (data != null && !data.isBlank() && !"null".equals(data)) {
                 long lastSpin = parseLong(data, "lastSpin");
-                if (lastSpin > 0 && System.currentTimeMillis() - lastSpin < COOLDOWN_MS) {
+                if (lastSpin > 0) {
                     long remaining = COOLDOWN_MS - (System.currentTimeMillis() - lastSpin);
-                    statusText = "кулдаун: " + (remaining / 3_600_000L) + "ч";
-                    return false;
+                    if (remaining > 0) {
+                        long hours = remaining / 3_600_000L;
+                        statusText = "до следующего спина: " + hours + "ч";
+                        return false;
+                    }
                 }
             }
             statusText = "";
             return true;
         } catch (Exception e) {
-            statusText = "ошибка проверки";
+            statusText = "ошибка сети";
             return false;
         }
     }
 
-    /** Запускает спин. Результат определяется на клиенте (weighted random) и сохраняется в Firebase. */
+    /**
+     * Запускает спин.
+     * Результат определяется на клиенте (weighted random) и сразу пишется в Firebase.
+     */
     public static synchronized SpinResult spin(String hwid, String uid) {
         try {
             int days = weightedRandom();
@@ -60,8 +70,7 @@ public final class GiftSpinManager {
             post("gift_spins/" + sha256(hwid) + ".json", body);
             lastDays = days;
             lastResultAt = System.currentTimeMillis();
-            statusText = days == 0 ? "не повезло :("
-                       : "выпало " + days + " " + dayWord(days);
+            statusText = days == 0 ? "не повезло" : "выпало " + days + " дн";
             return new SpinResult(true, days);
         } catch (Exception e) {
             statusText = "ошибка: " + e.getMessage();
@@ -131,15 +140,6 @@ public final class GiftSpinManager {
     private static String escape(String s) {
         if (s == null) return "";
         return s.replace("\\", "\\\\").replace("\"", "\\\"");
-    }
-
-    private static String dayWord(int days) {
-        int abs = Math.abs(days) % 10;
-        int ten = Math.abs(days) % 100;
-        if (ten >= 11 && ten <= 19) return "дней";
-        if (abs == 1) return "день";
-        if (abs >= 2 && abs <= 4) return "дня";
-        return "дней";
     }
 
     public record SpinResult(boolean ok, int days) {}

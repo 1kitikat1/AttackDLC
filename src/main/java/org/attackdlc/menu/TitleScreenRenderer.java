@@ -193,6 +193,15 @@ public final class TitleScreenRenderer {
         Render2DUtil.texture(giftX, giftY, 28f, 28f, Textures.Icons.GIFT)
                 .color(giftHovered ? 0xFF60A5FA : 0xFF787E88)
                 .draw();
+        // Подсказка кулдауна рядом с кнопкой
+        if (giftHovered && !org.attackdlc.gift.GiftSpinManager.statusText().isBlank()) {
+            String st = org.attackdlc.gift.GiftSpinManager.statusText();
+            MsdfFont hintFont = UiFonts.sfPro(500);
+            float hintW = hintFont.measureWidth(st, 8f, 8f * UiFontStyle.REGULAR.letterSpacingEm());
+            Render2DUtil.text(giftX - hintW - 6f, giftY - 14f, 8f, st)
+                    .font(hintFont).style(UiFontStyle.REGULAR)
+                    .color(TEXT_MUTED).draw();
+        }
     }
 
     // ------------------------------------------------------------ навигация
