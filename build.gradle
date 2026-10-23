@@ -119,62 +119,88 @@ task dumpClassHashes {
     }
 }
 
-// ─── Протект: обфускация имён через ProGuard ──────────────────────────────
+// ─── Обфускация через OBF (ASM-based, Java 25 compatible) ─────────────────
+// Запуск: .\gradlew.bat obfuscate
+// После обфускации копирует результат в devlibs/ для деплоя.
 
-configurations { proguardLib }
-
-dependencies {
-    proguardLib 'com.guardsquare:proguard-base:7.5.0'
-}
-
-def obfOut    = file("${layout.buildDirectory.get().asFile}/obf")
-def obfJar    = file("${obfOut}/${project.base.archivesName.get()}-${project.version}.jar")
-
-task obfuscate(type: JavaExec) {
-    dependsOn jar
+tasks.register('obfuscate', Exec) {
     group = 'protect'
-    description = 'Обфускация jar через ProGuard'
+    description = 'Обфускация клиента через OBF: ASM-переименование + XOR-строки + junk-классы'
+    dependsOn jar
 
-    mainClass = 'proguard.ProGuard'
+    def inputJar  = jar.archiveFile.get().asFile
+    def obfOutDir = file("${layout.buildDirectory.get().asFile}/obf")
+    obfOutDir.mkdirs()
+    def outputJar = file("${obfOutDir}/${project.base.archivesName.get()}-${project.version}-obf.jar")
+    def mappings  = file("${obfOutDir}/mappings.txt")
+    def obfJar    = file("C:/Users/Kitikat/Desktop/OBF/target/fabric-obfuscator.jar")
 
-    def inputJar = jar.archiveFile.get().asFile
-    def cacheDir = file("${obfOut}/cache")
-    cacheDir.mkdirs()
+    if (!obfJar.exists()) {
+        throw new GradleException("OBF не найден: ${obfJar}. Собери в IntelliJ: Maven → package")
+    }
 
-    classpath = configurations.proguardLib
-    args '-injars',       inputJar.absolutePath
-    args '-outjars',      obfJar.absolutePath
-    args '-libraryjars',  inputJar.absolutePath
-    args '-target',       '25'
-    args '-optimizationpasses', '3'
-    args '-dontpreverify'
-    args '-dontshrink'
-    args '-dontskipnonpubliclibraryclasses'
-    args '-dontskipnonpubliclibraryclassmembers'
-    args '-verbose'
+    workingDir project.rootDir
+    commandLine 'java', '-jar', obfJar.absolutePath,
+            inputJar.absolutePath,
+            outputJar.absolutePath,
+            '--mappings', mappings.absolutePath,
+            '--junk-ratio', '9',
+            '--keep-class', 'sdk/api/invoke/api/invoke',
+            '--keep-class', 'sdk/api/invoke/impl/PackerMode',
+            '--keep-class', 'sdk/api/invoke/impl/PackerType'
 
-    // Сохраняем entrypoint и mixin-классы
-    args '-keep', 'class org.attackdlc.AttackDlcClient { public void onInitialize(); }'
-    args '-keep', 'class org.attackdlc.license.* { *; }'
-    args '-keep', 'class ru.xd.Session { *; }'
-    args '-keep', 'class org.attackdlc.mixin.* { *; }'
-    args '-keep', 'class org.attackdlc.feature.impl.* { *; }'
-
-    // Классы с аннотацией @invoke — обфусцируем методы, но не сам класс
-    args '-keepclassmembers,allowshrinking,allowobfuscation class * { @sdk.api.invoke.api.invoke <methods>; }'
-
-    // Mapping для отладки
-    args '-printmapping', file("${cacheDir}/mapping.txt").absolutePath
-    args '-printseeds',   file("${cacheDir}/seeds.txt").absolutePath
+    doLast {
+        if (!outputJar.exists()) throw new GradleException("OBF не создал jar: ${outputJar}")
+        // Результат кладём в devlibs — оттуда лаунчер берёт для запуска
+        def devlibs = file("${layout.buildDirectory.get().asFile}/devlibs")
+        devlibs.mkdirs()
+        def devJar = file("${devlibs}/${project.base.archivesName.get()}-${project.version}-dev.jar")
+        outputJar.renameTo(devJar)
+        println "[obf] → ${devJar}"
+    }
 }
 
-// ─── Сборка release-jar (обфусцированный, без sources) ───────────────────
+// ─── Release-jar: обфусцированный клиент для магазина ──────────────────────
 
 task releaseJar(type: Copy) {
-    dependsOn jar
+    dependsOn obfuscate
     group = 'distribution'
-    description = 'Релизная сборка: jar без sources, с протектом'
-    from jar.archiveFile.get().asFile.parent
-    include "${project.base.archivesName.get()}-${project.version}.jar"
-    into file("${layout.buildDirectory.get().asFile}/release")
+    description = 'Копирует obfuscated jar в store + release'
+    doLast {
+        def devlibs  = file("${layout.buildDirectory.get().asFile}/devlibs")
+        def devJar   = file("${devlibs}/${project.base.archivesName.get()}-${project.version}-dev.jar")
+        def release  = file("${layout.buildDirectory.get().asFile}/release")
+        release.mkdirs()
+        if (devJar.exists()) {
+            copy { from devJar; into release; rename { "attackdlc.jar" } }
+            println "[release] → ${release}/attackdlc.jar"
+        }
+    }
+}
+
+// ─── Хеши классов после обфускации (обновлять NativeGuard при каждой сборке) ─
+
+task dumpClassHashesAfterObf {
+    group = 'protect'
+    description = 'Выводит SHA-256 хешей обфусцированных классов — вставить в NativeGuard.java'
+    dependsOn obfuscate
+    doLast {
+        def devlibs = file("${layout.buildDirectory.get().asFile}/devlibs")
+        def devJar  = file("${devlibs}/${project.base.archivesName.get()}-${project.version}-dev.jar")
+        if (!devJar.exists()) { println "[hashes] dev jar not found"; return }
+        def zip = new java.util.zip.ZipFile(devJar)
+        def targets = ['LicenseManager.class', 'Hwid.class', 'AttackDlcClient.class']
+        targets.each { name ->
+            def e = zip.entries().find { it.name.endsWith("/$name") || it.name == name }
+            if (!e) { println "[MISSING] $name"; return }
+            def md = java.security.MessageDigest.getInstance('SHA-256')
+            zip.getInputStream(e).withCloseable { is ->
+                byte[] b = new byte[8192]; int n
+                while ((n = is.read(b)) != -1) md.update(b, 0, n)
+            }
+            def hex = md.digest().collect { String.format('%02x', it) }.join()
+            println "$name  →  $hex"
+        }
+        zip.close()
+    }
 }

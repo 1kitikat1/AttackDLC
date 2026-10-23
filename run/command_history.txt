@@ -21,3 +21,6 @@
 /reg qweqweqwe qweqweqwe
 /reg qweqweqwe11 qweqweqwe11
 /reg 1qweqweqwe11 1qweqweqwe11
+/reg qweqwe
+/skin random
+/warp pvp

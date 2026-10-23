@@ -479,6 +479,25 @@
         "HvH Mode": true
       }
     },
+    "AnchorAura": {
+      "enabled": false,
+      "visible": true,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
+      "bindMode": "TOGGLE",
+      "settings": {
+        "Заряды": 4.0,
+        "Target Range": 8.0,
+        "Range": 4.5,
+        "Min Damage": 2.0,
+        "Max Self Dmg": 6.0,
+        "Delay": 150.0,
+        "Ignore Walls": false,
+        "Rotate Mode": "Packet"
+      }
+    },
     "AutoTotem": {
       "enabled": true,
       "visible": true,
@@ -498,14 +517,14 @@
         "Crystal Height": 2.5,
         "TNT Distance": 8.0,
         "Dangers": [
-          "Anchor",
           "Mace",
           "Spear",
           "Fall",
           "Obsidian",
           "Elytra",
           "Explosion",
-          "Crystal"
+          "Crystal",
+          "Anchor"
         ]
       }
     },
@@ -597,16 +616,10 @@
     "AutoExplosion": {
       "enabled": false,
       "visible": true,
-      "binds": [
-        67
-      ],
-      "bindModes": [
-        "TOGGLE"
-      ],
-      "bindVisibility": [
-        true
-      ],
-      "bind": 67,
+      "binds": [],
+      "bindModes": [],
+      "bindVisibility": [],
+      "bind": -1,
       "bindMode": "TOGGLE",
       "settings": {
         "Trigger": "Look",
@@ -735,7 +748,7 @@
       }
     },
     "EntityESP": {
-      "enabled": true,
+      "enabled": false,
       "visible": true,
       "binds": [
         71
