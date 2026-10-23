@@ -1,21 +1,8 @@
 {
   "stats": {
-    "minecraft:picked_up": {
-      "minecraft:oak_stairs": 2
-    },
-    "minecraft:custom": {
-      "minecraft:sprint_one_cm": 1677,
-      "minecraft:time_since_rest": 1519,
-      "minecraft:walk_one_cm": 2595,
-      "minecraft:total_world_time": 1629,
-      "minecraft:leave_game": 1,
-      "minecraft:fly_one_cm": 10564,
-      "minecraft:mob_kills": 2,
-      "minecraft:walk_on_water_one_cm": 76,
-      "minecraft:play_time": 1519,
-      "minecraft:damage_dealt": 1670,
-      "minecraft:jump": 34,
-      "minecraft:time_since_death": 1519
+    "minecraft:killed": {
+      "minecraft:iron_golem": 1,
+      "minecraft:sheep": 1
     },
     "minecraft:used": {
       "minecraft:netherite_sword": 18,
@@ -23,9 +10,22 @@
       "minecraft:end_crystal": 21,
       "minecraft:obsidian": 3
     },
-    "minecraft:killed": {
-      "minecraft:iron_golem": 1,
-      "minecraft:sheep": 1
+    "minecraft:picked_up": {
+      "minecraft:oak_stairs": 2
+    },
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 1786,
+      "minecraft:time_since_rest": 1820,
+      "minecraft:walk_one_cm": 2788,
+      "minecraft:total_world_time": 1930,
+      "minecraft:leave_game": 2,
+      "minecraft:fly_one_cm": 10983,
+      "minecraft:mob_kills": 2,
+      "minecraft:walk_on_water_one_cm": 76,
+      "minecraft:play_time": 1820,
+      "minecraft:damage_dealt": 1670,
+      "minecraft:jump": 35,
+      "minecraft:time_since_death": 1820
     }
   },
   "DataVersion": 4903

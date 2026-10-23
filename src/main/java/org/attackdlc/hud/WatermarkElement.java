@@ -71,11 +71,13 @@ public final class WatermarkElement extends HudElement {
         try {
             String name = Class.forName("ru.xd.Session").getMethod("getName").invoke(null) instanceof String s ? s : null;
             if (name != null && !name.isBlank()) {
+                String role = Class.forName("ru.xd.Session").getMethod("getRole").invoke(null) instanceof String r ? r : "";
+                if ("owner".equalsIgnoreCase(role)) return name + " 👑";
+                if ("user".equalsIgnoreCase(role))   return name + " 🔑";
                 return name;
             }
         } catch (Throwable ignored) {
         }
-
         return "Не авторизован";
     }
 

@@ -16,7 +16,7 @@ glintStrength:0.75
 preferredGraphicsBackend:"opengl"
 graphicsPreset:"custom"
 prioritizeChunkUpdates:0
-fullscreen:false
+fullscreen:true
 exclusiveFullscreen:false
 gamma:0.5
 guiScale:2
