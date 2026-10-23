@@ -184,23 +184,30 @@ public final class TitleScreenRenderer {
         } catch (Throwable ignored) {}
 
         // ── Кнопка подарка — правый верх, под короной ──
+        // Видна только пока подарок не открыт (раз в неделю на HWID).
+        org.attackdlc.gift.GiftSpinManager.ensureChecked();
+        boolean giftAvailable = org.attackdlc.gift.GiftSpinManager.isAvailable();
         float giftX = w - margin - 44f;
         float giftY = brandY + brandSize + 18f;
         giftBtnX = giftX; giftBtnY = giftY;
-        giftBtnW = 28f; giftBtnH = 28f;
-        boolean giftHovered = mx >= giftX && mx <= giftX + giftBtnW
-                && my >= giftY && my <= giftY + giftBtnH;
-        Render2DUtil.texture(giftX, giftY, 28f, 28f, Textures.Icons.GIFT)
-                .color(giftHovered ? 0xFF60A5FA : 0xFF787E88)
-                .draw();
-        // Подсказка кулдауна рядом с кнопкой
-        if (giftHovered && !org.attackdlc.gift.GiftSpinManager.statusText().isBlank()) {
-            String st = org.attackdlc.gift.GiftSpinManager.statusText();
-            MsdfFont hintFont = UiFonts.sfPro(500);
-            float hintW = hintFont.measureWidth(st, 8f, 8f * UiFontStyle.REGULAR.letterSpacingEm());
-            Render2DUtil.text(giftX - hintW - 6f, giftY - 14f, 8f, st)
-                    .font(hintFont).style(UiFontStyle.REGULAR)
-                    .color(TEXT_MUTED).draw();
+        if (giftAvailable) {
+            giftBtnW = 28f; giftBtnH = 28f;
+            boolean giftHovered = mx >= giftX && mx <= giftX + giftBtnW
+                    && my >= giftY && my <= giftY + giftBtnH;
+            Render2DUtil.texture(giftX, giftY, 28f, 28f, Textures.Icons.GIFT)
+                    .color(giftHovered ? 0xFF60A5FA : 0xFF787E88)
+                    .draw();
+            // Подсказка кулдауна рядом с кнопкой
+            if (giftHovered && !org.attackdlc.gift.GiftSpinManager.statusText().isBlank()) {
+                String st = org.attackdlc.gift.GiftSpinManager.statusText();
+                MsdfFont hintFont = UiFonts.sfPro(500);
+                float hintW = hintFont.measureWidth(st, 8f, 8f * UiFontStyle.REGULAR.letterSpacingEm());
+                Render2DUtil.text(giftX - hintW - 6f, giftY - 14f, 8f, st)
+                        .font(hintFont).style(UiFontStyle.REGULAR)
+                        .color(TEXT_MUTED).draw();
+            }
+        } else {
+            giftBtnW = 0f; giftBtnH = 0f;
         }
     }
 

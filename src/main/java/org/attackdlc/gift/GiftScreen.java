@@ -229,12 +229,14 @@ public final class GiftScreen {
 
     public boolean handleClick(float mx, float my, float bx, float by, float bw, float bh) {
         if (state != State.IDLE && state != State.CLOSED) return true;
+        if (bw <= 0f || bh <= 0f) return false;
         if (mx >= bx && mx <= bx + bw && my >= by && my <= by + bh) { open(); return true; }
         return false;
     }
 
     public void open() {
         if (state == State.IDLE || state == State.CLOSED) {
+            if (!GiftSpinManager.isAvailable()) return;
             state = State.OPENING; progress = 0f; showedResult = false; initSpin();
         }
     }
@@ -251,7 +253,7 @@ public final class GiftScreen {
         try { uid = (String) Class.forName("ru.xd.Session").getMethod("getUid").invoke(null); }
         catch (Throwable ignored) {}
 
-        if (!GiftSpinManager.canSpin(hwid)) { state = State.CLOSED; progress = 1f; return; }
+        if (!GiftSpinManager.isAvailable()) { state = State.CLOSED; progress = 1f; return; }
 
         GiftSpinManager.SpinResult r = GiftSpinManager.spin(hwid, uid);
         wonDays = r.ok() ? r.days() : 0;

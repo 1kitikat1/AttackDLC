@@ -1,12 +1,16 @@
 package org.attackdlc.gift;
 
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.security.MessageDigest;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.Duration;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * Управление розыгрышами подарков.
@@ -28,6 +32,91 @@ public final class GiftSpinManager {
     public static String    statusText()   { return statusText; }
     public static Integer   lastDays()     { return lastDays; }
     public static long      lastResultAt() { return lastResultAt; }
+
+    // ─── доступность подарка (кнопка видна только раз в неделю) ─────
+
+    private static final Path LOCAL_STATE =
+            org.attackdlc.utils.ConfigIO.configDir().resolve("gift-cooldown.txt");
+    private static final AtomicBoolean REFRESHING = new AtomicBoolean(false);
+    /** Момент (ms), когда снова можно крутить. 0 = можно сейчас. */
+    private static volatile long    nextSpinAt;
+    private static volatile boolean checked;
+
+    /** Проверить доступность (вызывать каждый кадр, дёшево). Сеть — асинхронно. */
+    public static void ensureChecked() {
+        if (checked) return;
+        synchronized (GiftSpinManager.class) {
+            if (checked) return;
+            long local = readLocalLastSpin();
+            nextSpinAt = local > 0 ? local + COOLDOWN_MS : 0L;
+            checked = true;
+            refreshAsync();
+        }
+    }
+
+    /** true, если подарок ещё не открыт и его можно показывать. */
+    public static boolean isAvailable() {
+        return checked && System.currentTimeMillis() >= nextSpinAt;
+    }
+
+    /** Сколько ожидать до следующего спина (мс). */
+    public static long msUntilNextSpin() {
+        return Math.max(0L, nextSpinAt - System.currentTimeMillis());
+    }
+
+    /** Асинхронно сверяет кулдаун с Firebase (сервер — источник истины). */
+    private static void refreshAsync() {
+        if (!REFRESHING.compareAndSet(false, true)) return;
+        String hwid;
+        try {
+            hwid = org.attackdlc.license.Hwid.get();
+        } catch (Throwable t) {
+            REFRESHING.set(false);
+            return;
+        }
+        Thread th = new Thread(() -> {
+            try {
+                String data = fetch("gift_spins/" + sha256(hwid) + ".json");
+                if (data != null && !data.isBlank() && !"null".equals(data)) {
+                    long lastSpin = parseLong(data, "lastSpin");
+                    if (lastSpin > 0) {
+                        nextSpinAt = lastSpin + COOLDOWN_MS;
+                        writeLocalLastSpin(lastSpin); // зеркало для оффлайна
+                    } else {
+                        nextSpinAt = 0L;
+                    }
+                }
+            } finally {
+                REFRESHING.set(false);
+            }
+        }, "attackdlc-gift-refresh");
+        th.setDaemon(true);
+        th.start();
+    }
+
+    /** Фиксирует спин локально — кнопка сразу исчезает на неделю. */
+    private static synchronized void markSpun(long when) {
+        writeLocalLastSpin(when);
+        nextSpinAt = when + COOLDOWN_MS;
+    }
+
+    private static long readLocalLastSpin() {
+        try {
+            if (Files.exists(LOCAL_STATE)) {
+                String s = Files.readString(LOCAL_STATE).trim();
+                if (!s.isEmpty()) return Long.parseLong(s);
+            }
+        } catch (Throwable ignored) {}
+        return 0L;
+    }
+
+    private static void writeLocalLastSpin(long value) {
+        try {
+            Files.createDirectories(LOCAL_STATE.getParent());
+            Files.writeString(LOCAL_STATE, Long.toString(value),
+                    StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
+        } catch (Throwable ignored) {}
+    }
 
     /**
      * Проверяет, можно ли крутить сейчас.
@@ -68,6 +157,7 @@ public final class GiftSpinManager {
                     + ",\"lastSpin\":" + System.currentTimeMillis()
                     + ",\"uid\":\"" + escape(uid) + "\"}";
             post("gift_spins/" + sha256(hwid) + ".json", body);
+            markSpun(System.currentTimeMillis()); // кнопка скрывается на неделю
             lastDays = days;
             lastResultAt = System.currentTimeMillis();
             statusText = days == 0 ? "не повезло" : "выпало " + days + " дн";
