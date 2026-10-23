@@ -377,8 +377,8 @@
         "Look Range": 2.2,
         "Targets": [
           "Invisible",
-          "Mobs",
-          "Players"
+          "Players",
+          "Mobs"
         ],
         "Priority": "FOV",
         "Options": [
@@ -499,13 +499,13 @@
         "TNT Distance": 8.0,
         "Dangers": [
           "Elytra",
-          "Obsidian",
-          "Fall",
-          "Spear",
-          "Mace",
-          "Anchor",
+          "Explosion",
           "Crystal",
-          "Explosion"
+          "Anchor",
+          "Mace",
+          "Spear",
+          "Fall",
+          "Obsidian"
         ]
       }
     },
@@ -910,8 +910,8 @@
       "settings": {
         "Overlay": [
           "Fire",
-          "Bad Effects",
-          "Shaking"
+          "Shaking",
+          "Bad Effects"
         ],
         "World": [
           "Weather"
@@ -1040,8 +1040,8 @@
       "bindMode": "TOGGLE",
       "settings": {
         "render.chams.targets": [
-          "Players",
-          "Hostile"
+          "Hostile",
+          "Players"
         ],
         "render.chams.distance": 97.0,
         "render.chams.effect": [
@@ -1673,9 +1673,9 @@
       "bindMode": "TOGGLE",
       "settings": {
         "Helpers": [
-          "Save Pickaxe",
+          "Next Mine",
           "Clean Inventory",
-          "Next Mine"
+          "Save Pickaxe"
         ],
         "Cleanup At Free Slots": 2.0,
         "Drop Interval": 1.0,

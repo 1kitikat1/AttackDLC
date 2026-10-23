@@ -14,18 +14,18 @@
       "minecraft:oak_stairs": 2
     },
     "minecraft:custom": {
-      "minecraft:sprint_one_cm": 1786,
-      "minecraft:time_since_rest": 1820,
-      "minecraft:walk_one_cm": 2788,
-      "minecraft:total_world_time": 1930,
-      "minecraft:leave_game": 2,
+      "minecraft:sprint_one_cm": 1861,
+      "minecraft:time_since_rest": 2012,
+      "minecraft:walk_one_cm": 3159,
+      "minecraft:total_world_time": 2523,
+      "minecraft:leave_game": 3,
       "minecraft:fly_one_cm": 10983,
       "minecraft:mob_kills": 2,
       "minecraft:walk_on_water_one_cm": 76,
-      "minecraft:play_time": 1820,
+      "minecraft:play_time": 2012,
       "minecraft:damage_dealt": 1670,
       "minecraft:jump": 35,
-      "minecraft:time_since_death": 1820
+      "minecraft:time_since_death": 2012
     }
   },
   "DataVersion": 4903

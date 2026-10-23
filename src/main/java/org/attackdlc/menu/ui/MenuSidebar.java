@@ -208,23 +208,30 @@ public final class MenuSidebar extends Component {
         float avatarX = CATEGORY_X + 10f;
         float avatarY = PROFILE_Y + 14f;
         Render2DUtil.texture(sx(avatarX), sy(avatarY), avatarSize, avatarSize, Textures.Header.PROFILE_AVATAR).draw();
+
+        // Имя + корона (корона под именем, центрирована)
         float nameX = CATEGORY_X + 38f;
-        float nameCY = PROFILE_Y + 18f;
+        float nameCY = PROFILE_Y + 17f;
         Render2DUtil.text(sx(nameX), UiFonts.sfProDisplay().centeredTextY(sy(nameCY), px(10f)), px(10f), username)
             .style(UiFontStyle.SEMIBOLD)
             .color(Theme.Colors.PRIMARY)
             .draw();
-        // Корона-иконка
+
+        // Корона — по центру имени, ниже
         try {
             String role = ru.xd.Session.getRole();
             boolean isOwner = "owner".equalsIgnoreCase(role);
             float crownSize = px(10f);
-            Render2DUtil.texture(sx(nameX + px(10f) + 4f), UiFonts.sfProDisplay().centeredTextY(sy(nameCY), crownSize), crownSize, crownSize,
+            float nameW = UiFonts.sfProDisplay().measureWidth(username, px(10f), px(10f) * UiFontStyle.SEMIBOLD.letterSpacingEm());
+            float crownX = sx(nameX + (nameW - crownSize) / 2f);
+            float crownY = sy(nameCY + 10f);
+            Render2DUtil.texture(crownX, crownY, crownSize, crownSize,
                 Textures.Icons.CROWN)
                 .color(isOwner ? Theme.getAccent() : Theme.Colors.SECONDARY)
                 .draw();
         } catch (Throwable ignored) {}
-        Render2DUtil.text(sx(nameX), UiFonts.sfProDisplay().centeredTextY(sy(nameCY + 12f), px(8f)), px(8f), "Аккаунты")
+
+        Render2DUtil.text(sx(nameX), UiFonts.sfProDisplay().centeredTextY(sy(nameCY + 26f), px(8f)), px(8f), "Аккаунты")
             .style(UiFontStyle.REGULAR)
             .color(Theme.Colors.SECONDARY_DARK)
             .draw();

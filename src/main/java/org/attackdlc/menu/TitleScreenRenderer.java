@@ -54,6 +54,10 @@ public final class TitleScreenRenderer {
     private static String toast = null;
     private static long toastUntil = 0L;
 
+    // Кэш приветствия и роли
+    private static String cachedGreeting = null;
+    private static long cachedGreetingAt = 0L;
+
     private TitleScreenRenderer() {
     }
 
@@ -112,7 +116,9 @@ public final class TitleScreenRenderer {
     private static void drawBrand(GuiGraphicsExtractor ctx, int w, int h, float offsetY) {
         float margin = marginX(w);
         MsdfFont font = UiFonts.sfPro(700);
+        MsdfFont labelFont = UiFonts.sfPro(500);
 
+        // ── ATTACKDLC (верх-лево) ──
         float brandSize = 13f;
         float brandY = 44f + offsetY * 0.4f;
         Render2DUtil.text(margin, brandY, brandSize, "ATTACKDLC")
@@ -122,43 +128,45 @@ public final class TitleScreenRenderer {
                 .draw();
 
         Render2DUtil.text(margin, brandY + brandSize + 8f, 7f, "MINECRAFT 26.2  ·  FABRIC")
-                .font(UiFonts.sfPro(500))
+                .font(labelFont)
                 .style(UiFontStyle.MEDIUM)
                 .color(TEXT_MUTED)
                 .draw();
 
-        // Версия справа сверху
-        MsdfFont small = UiFonts.sfPro(500);
+        // ── Версия (верх-право) ──
         String version = "v1.0";
-        float versionW = small.measureWidth(version, 8f, 8f * UiFontStyle.REGULAR.letterSpacingEm());
+        float versionW = labelFont.measureWidth(version, 8f, 8f * UiFontStyle.REGULAR.letterSpacingEm());
         Render2DUtil.text(w - margin - versionW, brandY + 2f, 8f, version)
-                .font(small)
+                .font(labelFont)
                 .style(UiFontStyle.REGULAR)
                 .color(TEXT_MUTED)
                 .draw();
 
-        // Имя аккаунта с короной (если вошёл) — справа, перед версией
+        // ── Ник + корона (правый верх, под версией) ──
         try {
             String nick = ru.xd.Session.getName();
             if (nick != null && !nick.isBlank()) {
                 String role = ru.xd.Session.getRole();
+                boolean isOwner = "owner".equalsIgnoreCase(role);
                 float nickW = font.measureWidth(nick, brandSize, brandSize * UiFontStyle.MEDIUM.letterSpacingEm());
-                float nickX = w - margin - nickW - versionW - 8f;
+                float crownSize = brandSize * 0.9f;
+                float crownW = crownSize; // примерно квадратная иконка
+                float blockW = nickW + crownW + 10f;
+                float nickX = w - margin - blockW;
                 if (nickX > margin + 10f) {
+                    // Ник
                     Render2DUtil.text(nickX, brandY, brandSize, nick)
                             .font(font)
                             .style(UiFontStyle.MEDIUM)
                             .color(TEXT_PRIMARY)
                             .draw();
-                    // Корона-иконка
-                    try {
-                        boolean isOwner = "owner".equalsIgnoreCase(role);
-                        float crownSize = brandSize * 0.85f;
-                        Render2DUtil.texture(nickX + nickW + 3f, brandY + (brandSize - crownSize) / 2f, crownSize, crownSize,
-                                Textures.Icons.CROWN)
-                                .color(isOwner ? Theme.getAccent() : 0xFFA6ACB6)
-                                .draw();
-                    } catch (Throwable ignored) {}
+                    // Корона — под ником, центрирована относительно ника
+                    float crownX = nickX + (nickW - crownW) / 2f;
+                    float crownY = brandY + brandSize + 3f;
+                    Render2DUtil.texture(crownX, crownY, crownSize, crownSize,
+                            Textures.Icons.CROWN)
+                            .color(isOwner ? Theme.getAccent() : TEXT_SECONDARY)
+                            .draw();
                 }
             }
         } catch (Throwable ignored) {}
@@ -172,9 +180,10 @@ public final class TitleScreenRenderer {
         float blockH = LABELS.length * ROW_H + (LABELS.length - 1) * ROW_GAP;
         float startY = (h - blockH) / 2f + h * 0.03f;
 
-        // Подпись над меню
+        // Подпись над меню — "Добрый день, Kitikat"
         float captionSize = 8f;
-        Render2DUtil.text(margin, startY - 30f, captionSize, getGreeting())
+        String greeting = getGreeting();
+        Render2DUtil.text(margin, startY - 30f, captionSize, greeting)
                 .font(UiFonts.sfPro(500))
                 .style(UiFontStyle.REGULAR)
                 .color(TEXT_SECONDARY)
@@ -344,11 +353,26 @@ public final class TitleScreenRenderer {
     }
 
     private static String getGreeting() {
+        long now = System.currentTimeMillis();
+        if (cachedGreeting != null && now - cachedGreetingAt < 30_000L) return cachedGreeting;
         int hour = LocalTime.now().getHour();
-        if (hour >= 4 && hour < 12) return "Доброе утро";
-        if (hour >= 12 && hour < 18) return "Добрый день";
-        if (hour >= 18 && hour < 23) return "Добрый вечер";
-        return "Доброй ночи";
+        String base;
+        if (hour >= 4 && hour < 12) base = "Доброе утро";
+        else if (hour >= 12 && hour < 18) base = "Добрый день";
+        else if (hour >= 18 && hour < 23) base = "Добрый вечер";
+        else base = "Доброй ночи";
+        try {
+            String nick = ru.xd.Session.getName();
+            if (nick != null && !nick.isBlank()) {
+                cachedGreeting = base + ", " + nick;
+            } else {
+                cachedGreeting = base;
+            }
+        } catch (Throwable ignored) {
+            cachedGreeting = base;
+        }
+        cachedGreetingAt = now;
+        return cachedGreeting;
     }
 
     private static float approach(float value, float target, float speed) {
