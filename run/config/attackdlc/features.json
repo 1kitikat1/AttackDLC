@@ -376,9 +376,9 @@
         "Range": 3.0,
         "Look Range": 2.2,
         "Targets": [
+          "Mobs",
           "Invisible",
-          "Players",
-          "Mobs"
+          "Players"
         ],
         "Priority": "FOV",
         "Options": [
@@ -470,7 +470,7 @@
         "Break Delay": 0.0,
         "Rotate Mode": "Packet",
         "Target Priority": "Random",
-        "Place Mode": "Any",
+        "Place Mode": "Best",
         "Silent Switch": true,
         "Multi Place": true,
         "Predict Move": true,

@@ -1,31 +1,37 @@
 {
   "stats": {
-    "minecraft:killed": {
-      "minecraft:iron_golem": 1,
-      "minecraft:sheep": 1
-    },
     "minecraft:used": {
-      "minecraft:netherite_sword": 18,
+      "minecraft:warden_spawn_egg": 2,
+      "minecraft:netherite_sword": 65,
       "minecraft:snowball": 85,
-      "minecraft:end_crystal": 21,
-      "minecraft:obsidian": 3
+      "minecraft:end_crystal": 78,
+      "minecraft:obsidian": 20
     },
     "minecraft:picked_up": {
-      "minecraft:oak_stairs": 2
+      "minecraft:oak_stairs": 2,
+      "minecraft:poppy": 2,
+      "minecraft:wheat_seeds": 1,
+      "minecraft:torch": 1,
+      "minecraft:iron_ingot": 3
     },
     "minecraft:custom": {
-      "minecraft:sprint_one_cm": 1861,
-      "minecraft:time_since_rest": 2012,
-      "minecraft:walk_one_cm": 3159,
-      "minecraft:total_world_time": 2523,
-      "minecraft:leave_game": 3,
-      "minecraft:fly_one_cm": 10983,
-      "minecraft:mob_kills": 2,
+      "minecraft:sprint_one_cm": 7878,
+      "minecraft:time_since_rest": 4726,
+      "minecraft:walk_one_cm": 10920,
+      "minecraft:total_world_time": 5270,
+      "minecraft:leave_game": 5,
+      "minecraft:fly_one_cm": 22259,
       "minecraft:walk_on_water_one_cm": 76,
-      "minecraft:play_time": 2012,
-      "minecraft:damage_dealt": 1670,
-      "minecraft:jump": 35,
-      "minecraft:time_since_death": 2012
+      "minecraft:mob_kills": 4,
+      "minecraft:damage_dealt": 6071,
+      "minecraft:play_time": 4726,
+      "minecraft:jump": 112,
+      "minecraft:time_since_death": 4726
+    },
+    "minecraft:killed": {
+      "minecraft:iron_golem": 1,
+      "minecraft:sheep": 1,
+      "minecraft:villager": 2
     }
   },
   "DataVersion": 4903
