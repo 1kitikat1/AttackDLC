@@ -32,6 +32,7 @@ import org.attackdlc.feature.impl.combat.AutoTotemFeature;
 import org.attackdlc.feature.impl.combat.BowAimbotFeature;
 import org.attackdlc.feature.impl.combat.CriticalsFeature;
 import org.attackdlc.feature.impl.combat.CrystalAuraFeature;
+import org.attackdlc.feature.impl.combat.AnchorAuraFeature;
 import org.attackdlc.feature.impl.combat.HitBoxesFeature;
 import org.attackdlc.feature.impl.combat.HitSoundFeature;
 import org.attackdlc.feature.impl.combat.LungeBoostFeature;
@@ -180,9 +181,9 @@ public final class FeatureManager {
                new AntiBotFeature(),
                new CriticalsFeature(),
                new TriggerBotFeature(),
-               new CrystalAuraFeature(),
-               new AutoTotemFeature(),
-               new AutoClickerFeature(),
+                               new CrystalAuraFeature(),
+                new AnchorAuraFeature(),
+                new AutoTotemFeature(),               new AutoClickerFeature(),
                new AutoMaceFeature(),
                new HitBoxesFeature(),
                new VelocityFeature(),

@@ -498,14 +498,14 @@
         "Crystal Height": 2.5,
         "TNT Distance": 8.0,
         "Dangers": [
-          "Elytra",
-          "Explosion",
-          "Crystal",
           "Anchor",
           "Mace",
           "Spear",
           "Fall",
-          "Obsidian"
+          "Obsidian",
+          "Elytra",
+          "Explosion",
+          "Crystal"
         ]
       }
     },
@@ -909,9 +909,9 @@
       "bindMode": "TOGGLE",
       "settings": {
         "Overlay": [
+          "Bad Effects",
           "Fire",
-          "Shaking",
-          "Bad Effects"
+          "Shaking"
         ],
         "World": [
           "Weather"
@@ -1673,9 +1673,9 @@
       "bindMode": "TOGGLE",
       "settings": {
         "Helpers": [
-          "Next Mine",
           "Clean Inventory",
-          "Save Pickaxe"
+          "Save Pickaxe",
+          "Next Mine"
         ],
         "Cleanup At Free Slots": 2.0,
         "Drop Interval": 1.0,

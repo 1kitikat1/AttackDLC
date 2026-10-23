@@ -14,6 +14,307 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/FeatureManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/FeatureManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/PveManagerConfigMigration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/combat/AntiBotFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/combat/AuraFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/combat/AutoClickerFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/combat/AutoExplosionFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/combat/AutoMaceFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/combat/AutoTotemFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/combat/BowAimbotFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/combat/CriticalsFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/combat/CrystalAuraFeature$Placement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/combat/CrystalAuraFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/combat/HitBoxesFeature$BoundingBoxGizmo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/combat/HitBoxesFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/combat/HitSoundFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/combat/LungeBoostFeature$Phase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/combat/LungeBoostFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/combat/ReachFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/combat/ShiftTapFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/combat/TriggerBotFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/combat/VelocityFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/AuctionHelperFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/AutoDuelFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/AutoTpaAcceptFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/ChestStealerFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/DeathCoordsFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/DonItems$AttributeSignature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/DonItems$Category.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/DonItems$DonItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/DonItems$EffectSignature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/DonItems$FunTime.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/DonItems$HolyWorld.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/DonItems$Index.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/DonItems$LoreEffectSignature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/DonItems$MatchRule.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/DonItems$NbtMarker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/DonItems$PotionEffectProfile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/DonItems$ReallyWorld.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/DonItems$Server.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/DonItems$StackView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/DonItems.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/ElytraHelperFeature$FireworkPhase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/ElytraHelperFeature$FireworkUsePhase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/ElytraHelperFeature$SwapPhase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/ElytraHelperFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/NameProtectFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/NoDelaysFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/PanicFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/ServerHelperFeature$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/ServerHelperFeature$BundleExtractState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/ServerHelperFeature$BundleTarget.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/ServerHelperFeature$FoundItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/ServerHelperFeature$ItemSummary.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/ServerHelperFeature$PendingAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/ServerHelperFeature$QuickAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/ServerHelperFeature$QuickUseEntry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/ServerHelperFeature$RwActionKind.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/ServerHelperFeature$RwQuickAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/ServerHelperFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/UseTrackerFeature$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/UseTrackerFeature$PotionData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/UseTrackerFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/misc/XCarryFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/AirStuckFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/AutoDodgeFeature$ArrowState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/AutoDodgeFeature$PlayerPotionInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/AutoDodgeFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/AutoJumpFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/ElytraBoosterFeature$BoostValues.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/ElytraBoosterFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/ElytraMotionFeature$MinecraftHolder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/ElytraMotionFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/ElytraTargetFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/FlyFeature$CachedPacket.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/FlyFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/GrimCollideFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/GrimElytraFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/GrimFlyFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/HighJumpFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/InventoryMoveFeature$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/InventoryMoveFeature$MovePhase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/InventoryMoveFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/NoFallFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/NoPushFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/NoSlowFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/NoWebFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/ParkourFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/SafeWalkFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/SpeedFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/SprintFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/StrafeFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/TimerFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/WallClimbFeature$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/WallClimbFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/movement/WaterSpeedFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/player/AutoBuyFeature$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/player/AutoBuyFeature$Catalog.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/player/AutoBuyFeature$Entry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/player/AutoBuyFeature$HistoryEntry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/player/AutoBuyFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/player/AutoBuyScreen$FeatureHolder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/player/AutoBuyScreen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/player/AutoRespawnFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/player/AutoSwapFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/player/AutoToolFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/player/ClickPearlFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/player/DiscordRPCFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/player/FarmHelperFeature$MinecraftHolder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/player/FarmHelperFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/player/FastBreakFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/player/FreeCamFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/player/FreeLookFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/player/FullBrightFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/player/ItemScrollerFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/player/MultiActionFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/player/NoJumpBoostFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/player/WindJumpFeature$ThrowMode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/player/WindJumpFeature$ThrowState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/player/WindJumpFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AncientBotFeature$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AncientBotFeature$BaritoneSettingsSnapshot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AncientBotFeature$State.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AncientBotFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AntiAfkActionTimer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AntiAfkFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AppleFarmerFeature$FarmerSignals.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AppleFarmerFeature$Phase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AppleFarmerFeature$StorageKind.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AppleFarmerFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AuctionRelistFeature$State.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AuctionRelistFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoArmorFeature$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoArmorFeature$ScoredSlot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoArmorFeature$Upgrade.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoArmorFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoAuthCredentialStore$EncryptedCredential.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoAuthCredentialStore$Scope.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoAuthCredentialStore.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoAuthFeature$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoAuthFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoAuthPromptParser$Prompt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoAuthPromptParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoCrafterFeature$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoCrafterFeature$ChestKind.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoCrafterFeature$State.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoCrafterFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoFishFeature$FishingState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoFishFeature$RodCandidate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoFishFeature$SplashSignal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoFishFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoGappleFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoLeaveFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoMineFeature$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoMineFeature$LocalTargetScan.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoMineFeature$Status.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoMineFeature$TargetHit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoMineFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoPotionFeature$PotionChoice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoPotionFeature$PotionKind.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoPotionFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoPottBotFeature$AutoPottBotDisplayEntry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoPottBotFeature$AutoPottBotState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoPottBotFeature$AutoPottBotState2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoPottBotFeature$AutoPottBotState3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoPottBotFeature$AutoPottBotState4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoPottBotFeature$AutoPottBotState5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoPottBotFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoTpLootFeature$State.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoTpLootFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoTradeFeature$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoTradeFeature$State.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoTradeFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoUseFeature$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoUseFeature$Action.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/AutoUseFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/BaseFinderFeature$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/BaseFinderFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/ClanInvestFeature$State.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/ClanInvestFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/ClanUpgradeFeature$State.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/ClanUpgradeFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/ConsumableInventory$Profile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/ConsumableInventory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/ConsumableSelector$Candidate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/ConsumableSelector$Kind.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/ConsumableSelector$Location.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/ConsumableSelector.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/ConsumableUseController$Mode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/ConsumableUseController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/CreeperFarmFeature$FarmSignals.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/CreeperFarmFeature$FarmStats.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/CreeperFarmFeature$Phase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/CreeperFarmFeature$UnloadStep.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/CreeperFarmFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/GriefJoinerFeature$State.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/GriefJoinerFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/MineHelperFeature$TrashDropState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/MineHelperFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/ModeratorDetector.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/NukerFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/PveCoordinateParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/PveManagerFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/SafeServerCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/SynchronizationFeature$QueuedRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/SynchronizationFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/autowarden/AnarchyRotation$MutableMetrics.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/autowarden/AnarchyRotation$Snapshot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/autowarden/AnarchyRotation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/autowarden/AutoWardenFeature$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/autowarden/AutoWardenFeature$ZoneGizmo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/autowarden/AutoWardenFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/autowarden/AutoWardenInventory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/autowarden/AutoWardenParsers$TimerReading.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/autowarden/AutoWardenParsers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/autowarden/AutoWardenStats$Snapshot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/autowarden/AutoWardenStats.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/autowarden/AutoWardenWorkflow$Phase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/autowarden/AutoWardenWorkflow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/autowarden/FunTimeWardenContract.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/autowarden/TelegramNotifier$Credentials.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/autowarden/TelegramNotifier$LinkStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/autowarden/TelegramNotifier.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/autowarden/WardenChestScanner$ChestObservation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/autowarden/WardenChestScanner$MutableChest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/autowarden/WardenChestScanner$StorageChest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/autowarden/WardenChestScanner$StorageKind.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/pve/autowarden/WardenChestScanner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/ArrowsFeature$ArrowState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/ArrowsFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/AtmoDawnFogFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/BlockEspFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/BlockOutlineFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/CapeFeature$CapeStyle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/CapeFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/ChamsFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/CrosshairFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/EntityEspFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/HitParticlesFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/HoldMyItemsCompat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/HoldMyItemsFeature$ReloadCompletionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/HoldMyItemsFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/HudFeature$SnapCandidate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/HudFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/ItemPhysicsFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/JumpCirclesFeature$Circle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/JumpCirclesFeature$Wave.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/JumpCirclesFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/KillEffectFeature$Effect.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/KillEffectFeature$PartFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/KillEffectFeature$PendingMark.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/KillEffectFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/NameTagsFeature$Privilege.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/NameTagsFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/PopChamsFeature$Snapshot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/PopChamsFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/RemovalsFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/SeeInvisibleFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/ShaderHandsFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/SwingAnimationFeature$Style.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/SwingAnimationFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/TargetESPFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/TrajectoriesFeature$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/TrajectoriesFeature$ImpactPoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/TrajectoriesFeature$Prediction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/TrajectoriesFeature$ScreenPoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/TrajectoriesFeature$TrajectoryStep.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/TrajectoriesFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/ViewModelFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/WorldParticlesFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/impl/visual/WorldTweaksFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/setting/ButtonSetting.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/setting/ColorMode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/setting/ColorSetting.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/setting/InputBindSetting.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/feature/setting/TextSetting.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/hud/ArmorHudElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/hud/CoordsElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/hud/HotbarElement$Style.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/hud/HotbarElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/hud/HudElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/hud/KeybindsElement$RowAnim.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/hud/KeybindsElement$RowSpec.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/hud/KeybindsElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/hud/MineTimerElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/hud/NotificationsElement$EffectState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/hud/NotificationsElement$Note.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/hud/NotificationsElement$Segment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/hud/NotificationsElement$Style.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/hud/NotificationsElement$ToggleListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/hud/NotificationsElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/hud/PotionsElement$Card.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/hud/PotionsElement$Style.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/hud/PotionsElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/hud/PveStatusElement$Row.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/hud/PveStatusElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/hud/QuickUseElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/hud/StaffListElement$RowAnim.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/hud/StaffListElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/hud/TargetElement$FaceIcon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/hud/TargetElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/hud/WatermarkElement.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/license/Hwid.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/license/LicenseGateScreen.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/license/LicenseManager.class" beforeDir="false" />
@@ -171,10 +472,22 @@
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/mixin/world/ClientClockManagerMixin.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/mixin/world/ClientLevelMixin.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/mixin/world/LevelMixin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/AutomationOwner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/AutomationPriority.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/AutomationResource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/PveAutomationCoordinator$Claim.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/PveAutomationCoordinator$RevocationReason.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/PveAutomationCoordinator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/PveFeature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/PveStateMachine.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/PvpStateTracker.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/economy/AhSellFlow$State.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/economy/AhSellFlow.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/economy/AuctionPriceScanner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/economy/CommandCooldown.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/economy/CraftingMenuController$Recipe.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/economy/CraftingMenuController$Result.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/economy/CraftingMenuController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/economy/EconomyAutomationPolicy$CrafterAction.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/economy/EconomyAutomationPolicy$TradeAction.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/economy/EconomyAutomationPolicy.class" beforeDir="false" />
@@ -183,23 +496,58 @@
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/economy/EconomyInventory.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/economy/EconomyItemText.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/economy/EconomyMenus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/economy/EconomyNavigator.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/economy/EconomyTextParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/economy/LocalPaymentLedger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/economy/LocalSyncProtocol$Envelope.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/economy/LocalSyncProtocol$MoneyRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/economy/LocalSyncProtocol$Payload.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/economy/LocalSyncProtocol$Status.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/economy/LocalSyncProtocol$Type.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/economy/LocalSyncProtocol.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/economy/LocalSyncTokenStore.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/economy/LocalSyncTransport$Peer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/economy/LocalSyncTransport$ReplayKey.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/economy/LocalSyncTransport.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/economy/NearbyEconomyBlocks.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/economy/ScoreboardBalance.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/economy/ServerUiText.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/mining/AutoMineFsm$Signal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/mining/AutoMineFsm$State.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/mining/AutoMineFsm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/mining/BaseFinderFsm$Signal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/mining/BaseFinderFsm$State.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/mining/BaseFinderFsm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/mining/ContainerClusterScanner$Result.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/mining/ContainerClusterScanner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/mining/MineProfiles$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/mining/MineProfiles$Profile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/mining/MineProfiles.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/mining/MineTimer.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/mining/MiningInventory.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/mining/MiningParsers$GridPoint.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/mining/MiningParsers$Region.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/mining/MiningParsers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/mining/MiningServerAdapter.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/mining/MiningServerAdapters$FunTimeMiningAdapter.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/mining/MiningServerAdapters$GenericMiningAdapter.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/mining/MiningServerAdapters.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/mining/MiningSessionSnapshot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/mining/MiningTargetSelector$Candidate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/mining/MiningTargetSelector$DiggingMode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/mining/MiningTargetSelector.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/mining/MiningToolProfile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/navigation/BaritoneNavigator$SettingsSnapshot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/navigation/BaritoneNavigator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/navigation/NavigationOptions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/navigation/Navigator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/server/ServerAdapter.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/server/ServerAdapters$FunTimeAdapter.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/server/ServerAdapters$GenericAdapter.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/server/ServerAdapters$HolyWorldAdapter.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/server/ServerAdapters$ReallyWorldAdapter.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/server/ServerAdapters.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/pve/server/ServerProfile.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/AccountSwitcher.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/BaritoneMute.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/ColorUtil.class" beforeDir="false" />
@@ -219,23 +567,40 @@
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/LocalPlayerHistory.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/PlayerInteractionHelper$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/PlayerInteractionHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/PlayerSimulation$SimulatedPlayerInput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/PlayerSimulation.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/PredictUtils.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/ServerSprintTracker.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/ServerTickSync.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/SprintManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/StopWatch.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/TargetFilter$TargetFilterBuilder.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/TargetFilter.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/TargetUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/Angle$VecRotation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/Angle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/AngleConfig.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/AngleConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/AngleConstructor.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/MathAngle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/attack/Pressing.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/attack/StrikeManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/attack/StrikerConstructor$AttackPerpetratorConfigurable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/attack/StrikerConstructor.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/back/BackAngle.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/context/AutoRegressionContext.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/impl/LinearConstructor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/impl/RotateConstructor.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/rotations/DeltaStyleMode.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/rotations/FTAngle.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/rotations/FTNewAngle.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/rotations/FunTimeSmoothMode.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/rotations/FunTimeSnapAngle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/rotations/FunTimeSnapSmoothMode$Animator$AngleAnimator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/rotations/FunTimeSnapSmoothMode$Animator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/rotations/FunTimeSnapSmoothMode$FTMathUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/rotations/FunTimeSnapSmoothMode$MathUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/rotations/FunTimeSnapSmoothMode.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/rotations/FunTimeTestMode.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/rotations/LegitCxMode.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/rotations/MatrixAngle.class" beforeDir="false" />
@@ -251,16 +616,28 @@
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/rotations/TestSmoothMode.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/rotations/USpookyTimeRotations.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/rotations/UniversalRotation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/target/MultiPoint$AimPoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/target/MultiPoint$PointDataset.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/target/MultiPoint$PointPreset.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/target/MultiPoint$PointScore.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/target/MultiPoint.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/target/RaycastAngle.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/target/RwWallBypassHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/target/TargetFinder$EntityFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/target/TargetFinder$PriorityBounds.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/target/TargetFinder$SortMode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/target/TargetFinder$TargetCandidate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/target/TargetFinder.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/target/Vector.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/target/WallUtils.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/util/AngleUtil.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/util/MathUtils.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/util/ServerType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/util/StopWatch.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/util/TaskPriority.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/util/TaskProcessor$Task.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/util/TaskProcessor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/util/Tuple.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/utils/FinalVector.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/aura/utils/FromVector.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/combat/rotations/AuraRotation.class" beforeDir="false" />
@@ -308,6 +685,20 @@
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/inventory/script/Script$ScriptTickStep.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/inventory/script/Script.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/inventory/script/ScriptAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/inventory/swap/MovementController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/inventory/swap/SwapExecutor$Phase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/inventory/swap/SwapExecutor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/inventory/swap/SwapSettings.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/math/Animation$Easing$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/math/Animation$Easing$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/math/Animation$Easing$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/math/Animation$Easing$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/math/Animation$Easing$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/math/Animation$Easing$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/math/Animation$Easing$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/math/Animation$Easing$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/math/Animation$Easing.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/math/Animation.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/math/BestPoint.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/math/MathUtil.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/math/NoiseUtil.class" beforeDir="false" />
@@ -322,6 +713,9 @@
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/HurtUtil$EntityHurtState.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/HurtUtil.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/ItemEntityRenderStateAccess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/Render3DUtil$ScreenBounds.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/Render3DUtil$ScreenPoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/Render3DUtil.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/ShaderFallback.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/Textures$Header.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/Textures$Hud.class" beforeDir="false" />
@@ -352,6 +746,18 @@
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/gui/GuiTexture$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/gui/GuiTexture.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/gui/MenuBackgroundRenderState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/gui/MsdfFont$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/gui/MsdfFont$Atlas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/gui/MsdfFont$Bounds.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/gui/MsdfFont$FontFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/gui/MsdfFont$Glyph.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/gui/MsdfFont$KerningPair.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/gui/MsdfFont$Line.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/gui/MsdfFont$Metrics.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/gui/MsdfFont$Paragraph.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/gui/MsdfFont$RawBounds.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/gui/MsdfFont$RawGlyph.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/gui/MsdfFont.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/gui/MsdfFontFamily$Builder.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/gui/MsdfFontFamily.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/gui/PlayerHead.class" beforeDir="false" />
@@ -374,8 +780,17 @@
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/gui/UiFonts.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/gui/UiVertexFormats.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/gui/UiVertexPacking.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/jump/JumpCircleRenderer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/jump/JumpGlowRenderer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/jump/JumpWaveRenderer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/jump/SceneSnapshot.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/particles/ModelPointSampler$CapturingConsumer.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/particles/ModelPointSampler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/particles/ProceduralParticleRenderer$Shape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/particles/ProceduralParticleRenderer$Sprite.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/particles/ProceduralParticleRenderer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/particles/ProceduralParticleState$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/particles/ProceduralParticleState.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/particles/WorldParticleRenderer$Sprite.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/particles/WorldParticleRenderer.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/post/FullscreenQuad.class" beforeDir="false" />
@@ -404,6 +819,9 @@
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/world/DynamicLightManager$RenderLight.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/world/DynamicLightManager.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/world/DynamicLightRenderer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/world/PredictionVfxRenderer$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/world/PredictionVfxRenderer$RadiusField.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/world/PredictionVfxRenderer.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/world/ShaderHandsRenderer.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/world/WorldEffect$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/world/WorldEffect$2.class" beforeDir="false" />
@@ -411,6 +829,12 @@
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/world/WorldEffect.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/world/WorldEffectContext.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/world/WorldEffects.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/world/WorldMeshRenderer$BuiltMesh.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/world/WorldMeshRenderer$Line.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/world/WorldMeshRenderer$PlaneRect.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/world/WorldMeshRenderer$Ring.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/world/WorldMeshRenderer$WorldMesh.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/world/WorldMeshRenderer.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/render/world/WorldTweaksRenderer.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/text/ChatUtil.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/attackdlc/utils/text/NameProtectUtil.class" beforeDir="false" />
@@ -422,221 +846,13 @@
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/sdk/api/enums/VirtualizationType.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/sdk/api/natives/Native.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/sdk/api/natives/NoNative.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/sdk/api/optimize/optimize.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/sdk/api/virtualization/Virtualization.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/devlibs/attackdlc-1.0-SNAPSHOT-dev.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/devlibs/attackdlc-1.0-SNAPSHOT-dev.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/devlibs/attackdlc-1.0-SNAPSHOT-dev.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/generated/sources/headers/java/main/ru_xd_Config.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/jars/Emojiful-Fabric-26.2-5.3.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/jars/ImmediatelyFast-Fabric-1.16.1+26.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/jars/ViaFabricPlus-4.6.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/jars/appleskin-fabric-mc26.2-3.0.10.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/jars/baritone-fabric-1.15.0-10-g57758940+mc26.2-blade1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/jars/entityculling-fabric-1.10.5-mc26.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/jars/ferritecore-9.0.0-fabric.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/jars/holdmyitems-5.1.1+26.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/jars/lithium-fabric-0.25.1+mc26.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/jars/modmenu-20.0.0-beta.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/jars/reeses-sodium-options-fabric-2.2.2+mc26.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/jars/sodium-extra-fabric-0.9.1+mc26.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/jars/sodium-fabric-0.9.1-beta.3+mc26.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/jars/waveycapes-fabric-1.10.2-mc26.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/licenses/baritone/LICENSE-LGPL-3.0.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/licenses/baritone/SOURCE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/fonts/google_sans_bold.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/fonts/google_sans_bold.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/fonts/google_sans_flex_bold.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/fonts/google_sans_flex_bold.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/fonts/google_sans_flex_medium.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/fonts/google_sans_flex_medium.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/fonts/google_sans_flex_regular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/fonts/google_sans_flex_regular.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/fonts/google_sans_flex_semibold.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/fonts/google_sans_flex_semibold.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/fonts/google_sans_medium.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/fonts/google_sans_medium.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/fonts/google_sans_regular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/fonts/google_sans_regular.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/fonts/google_sans_semibold.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/fonts/google_sans_semibold.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/fonts/sf_pro_bold.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/fonts/sf_pro_bold.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/fonts/sf_pro_medium.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/fonts/sf_pro_medium.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/fonts/sf_pro_regular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/fonts/sf_pro_regular.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/fonts/sf_pro_semibold.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/fonts/sf_pro_semibold.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/aura_marker.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/aura_marker.vsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/blur_rect.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/blur_rect.vsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/color_grid.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/color_grid.vsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/crystal_shard.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/item_downscale.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/item_downscale.vsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/jump_circle.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/jump_circle.vsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/jump_glow.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/jump_glow.vsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/jump_wave.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/jump_wave.vsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/menu_background.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/menu_background.vsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/popchams_solid.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/prediction_vfx.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/prediction_vfx.vsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/procedural_particle.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/procedural_particle.vsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/rect.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/rect.vsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/text.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/text.vsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/texture.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/texture.vsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/world_particle.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/world_particle.vsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/xrose_line.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/core/xrose_line.vsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/include/block_outline_common.glsl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/include/ui_common.glsl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/include/ui_fragment.glsl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/include/world_sky_common.glsl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/post/blurs/esp_kawase_down.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/post/blurs/esp_kawase_up.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/post/blurs/gui_kawase_down.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/post/blurs/gui_kawase_up.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/post/blurs/kawase_common.vsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/post/chams_glass.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/post/chams_glow.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/post/chams_internal.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/post/chams_nebula.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/post/chams_outline.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/post/chams_plasma.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/post/chams_solid.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/post/hand_blur_down.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/post/hand_blur_up.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/post/hand_fill.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/post/hand_glass.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/post/hand_halo.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/post/hand_mask.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/post/hand_mask_smooth.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/post/hand_outline.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/post/hand_plasma.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/post/hand_trail.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/post/point_lights.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/post/popchams_composite.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/post/shader_hands.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/post/world_saturation.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/world/block_outline.vsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/world/block_outline/caustics.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/world/block_outline/classic.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/world/block_outline/deep_space.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/world/block_outline/glossy.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/world/block_outline/nebula.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/world/block_outline/night.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/world/block_outline/prismatic.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/world/dawn_fog.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/world/sky/clouds_deep_space.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/world/sky/clouds_nebula.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/world/sky/clouds_plasma.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/world/sky/deep_space.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/world/sky/nebula.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/shaders/world/sky/plasma.fsh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/cape/appicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/cape/ascii.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/cape/barcode.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/cape/glass.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/cape/minimalpatern.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/cape/motto.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/cape/vandal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/gui/icon_16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/gui/icon_mac.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/hud/arrow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/hud/core_mark.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/hud/filled_arrow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/hud/logo_bolt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/hud/logo_bolt.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/hud/logo_rose.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/hud/watermark_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/LUCIDE_LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/accounts/head_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/accounts/head_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/accounts/head_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/accounts/head_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/accounts/head_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/accounts/head_5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/accounts/head_6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/header/avatar.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/header/avatar_gray.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/header/chevron_left.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/header/chevron_right.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/header/dev.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/header/document.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/header/friends.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/header/profile_add.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/header/search.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/header/settings.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/activity.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/boxes.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/brain.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/chevron_down.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/chevrons_left_right.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/chevrons_left_right_ellipsis.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/circle_plus.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/clock.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/command.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/delete.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/delete_left.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/dices.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/ellipsis.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/eye.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/gamepad_2.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/gift.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/hard_drive.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/keyboard.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/move_3d.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/option.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/palette.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/person_standing.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/pin.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/plus.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/refresh_ccw.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/rotate_ccw.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/scan_heart.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/signal.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/sliders_horizontal.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/sparkles.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/star_5.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/sword_dagger.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/sword_fine.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/swords.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/triangle_alert.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/user_round.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/user_round_check.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/user_round_plus.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/x.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/icons/zap.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/logo_boot.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/menu/macos_wallpaper.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/particles/glow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/shader/bloom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/shader/jump_frequency.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/target.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/attackdlc/textures/xrose_client_cape.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/attackdlc.mixins.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/fabric.mod.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/win32-x86-64/attackdlc-guard.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/win32-x86-64/attackdlc-guard.exp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/win32-x86-64/attackdlc-guard.lib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/win32-x86-64/discord-rpc.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/win32-x86/discord-rpc.dll" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/run/config/attackdlc/features.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/attackdlc/features.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/config/attackdlc/menu.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/attackdlc/menu.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/2026-10-23-1.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2026-10-23-1.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/2026-10-23-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2026-10-23-2.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/2026-10-23-3.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2026-10-23-3.log.gz" afterDir="false" />
@@ -651,30 +867,7 @@
       <change beforePath="$PROJECT_DIR$/run/logs/debug-5.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-5.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/latest.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/latest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World/baritone/minecraft/overworld_384/cache/r.1.-1.bcr" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/baritone/minecraft/overworld_384/cache/r.1.-1.bcr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World/baritone/minecraft/overworld_384/cache/r.1.-2.bcr" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/baritone/minecraft/overworld_384/cache/r.1.-2.bcr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World/data/minecraft/random_sequences.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/data/minecraft/random_sequences.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World/data/minecraft/wandering_trader.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/data/minecraft/wandering_trader.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World/data/minecraft/weather.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/data/minecraft/weather.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World/data/minecraft/world_clocks.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/data/minecraft/world_clocks.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World/dimensions/minecraft/overworld/data/minecraft/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/dimensions/minecraft/overworld/data/minecraft/raids.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World/dimensions/minecraft/overworld/entities/r.1.-1.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/dimensions/minecraft/overworld/entities/r.1.-1.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World/dimensions/minecraft/overworld/entities/r.1.-2.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/dimensions/minecraft/overworld/entities/r.1.-2.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World/dimensions/minecraft/overworld/poi/r.1.-1.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/dimensions/minecraft/overworld/poi/r.1.-1.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World/dimensions/minecraft/overworld/poi/r.1.-2.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/dimensions/minecraft/overworld/poi/r.1.-2.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World/dimensions/minecraft/overworld/region/r.1.-1.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/dimensions/minecraft/overworld/region/r.1.-1.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World/dimensions/minecraft/overworld/region/r.1.-2.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/dimensions/minecraft/overworld/region/r.1.-2.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World/dimensions/minecraft/overworld/region/r.2.-1.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/dimensions/minecraft/overworld/region/r.2.-1.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World/dimensions/minecraft/overworld/region/r.2.-2.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/dimensions/minecraft/overworld/region/r.2.-2.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World/dimensions/minecraft/the_end/data/minecraft/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/dimensions/minecraft/the_end/data/minecraft/raids.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World/dimensions/minecraft/the_nether/data/minecraft/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/dimensions/minecraft/the_nether/data/minecraft/raids.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World/level.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/level.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World/level.dat_old" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/level.dat_old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World/players/advancements/13f96cc6-86db-3858-8c15-25bf4f08fcb5.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/players/advancements/13f96cc6-86db-3858-8c15-25bf4f08fcb5.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World/players/data/13f96cc6-86db-3858-8c15-25bf4f08fcb5.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/players/data/13f96cc6-86db-3858-8c15-25bf4f08fcb5.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World/players/data/13f96cc6-86db-3858-8c15-25bf4f08fcb5.dat_old" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/players/data/13f96cc6-86db-3858-8c15-25bf4f08fcb5.dat_old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World/players/stats/13f96cc6-86db-3858-8c15-25bf4f08fcb5.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World/players/stats/13f96cc6-86db-3858-8c15-25bf4f08fcb5.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/usercache.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/usercache.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/attackdlc/feature/FeatureManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/attackdlc/feature/FeatureManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/attackdlc/gift/GiftScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/attackdlc/gift/GiftScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

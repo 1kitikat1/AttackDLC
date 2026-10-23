@@ -93,7 +93,7 @@ public final class GiftScreen {
         String hint = switch (state) {
             case SPINNING -> "0 · 1 · 3 · 6 дней подписки";
             case RESULT   -> wonDays == 0 ? "Попробуй через неделю" : "Всё зачислится автоматически";
-            default       -> "раз в неделю  ·  привязка к ПК";
+            default       -> "раз в неделю  ";
         };
         Render2DUtil.text(cx, cy - R - 30f, 9f, hint)
                 .align(TextAlign.CENTER)
