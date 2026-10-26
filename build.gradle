@@ -1,0 +1,207 @@
+﻿plugins {
+    id 'fabric-loom' version '1.17.12'
+    id 'maven-publish'
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+    archivesName = project.archives_base_name
+}
+
+repositories {
+    mavenCentral()
+    maven { name = "Fabric"; url = "https://maven.fabricmc.net/" }
+    maven { name = "Sponge Snapshots"; url = "https://repo.spongepowered.org/repository/maven-public/" }
+}
+
+loom {
+    noIntermediateMappings()
+    runs {
+        client {
+            property "fabric.runtimeMappingNamespace", "named"
+        }
+    }
+}
+
+def generatedMappings = file("${layout.buildDirectory.get().asFile}/generated/mappings/empty-mappings.jar")
+if (!generatedMappings.exists()) {
+    generatedMappings.parentFile.mkdirs()
+    new java.util.zip.ZipOutputStream(new FileOutputStream(generatedMappings)).withCloseable { zip ->
+        zip.putNextEntry(new java.util.zip.ZipEntry("mappings/mappings.tiny"))
+        zip.write("tiny\t2\t0\tofficial\tnamed\tintermediary\n".getBytes(java.nio.charset.StandardCharsets.UTF_8))
+        zip.closeEntry()
+    }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings files(generatedMappings)
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    implementation files('src/main/resources/META-INF/jars/baritone-fabric-1.15.0-10-g57758940+mc26.2-blade1.jar')
+
+    compileOnly 'org.jetbrains:annotations:26.0.1'
+    compileOnly 'org.projectlombok:lombok:1.18.36'
+    compileOnly 'com.google.errorprone:error_prone_annotations:2.36.0'
+    compileOnly 'biz.aQute.bnd:biz.aQute.bnd.annotation:7.1.0'
+
+    // JNA РґР»СЏ native-guard
+    implementation 'net.java.dev.jna:jna:5.14.0'
+}
+
+processResources {
+    inputs.property "version", project.version
+    inputs.property "minecraft_version", project.minecraft_version
+    inputs.property "loader_version", project.loader_version
+    filteringCharset "UTF-8"
+    // РСЃРєР»СЋС‡Р°РµРј cpp-РёСЃС…РѕРґРЅРёРєРё РёР· С„РёРЅР°Р»СЊРЅРѕРіРѕ jar
+    exclude 'cpp/**'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 25
+    it.options.encoding = "UTF-8"
+    it.options.compilerArgs += ['-proc:none']
+    exclude 'module-info.java'
+    exclude '**/package-info.java'
+}
+
+java {
+    // Р‘РµР· sources-jar РІ СЂРµР»РёР·Рµ вЂ” РёСЃС…РѕРґРЅРёРєРё РЅРµ РґРѕР»Р¶РЅС‹ РїРѕРїР°РґР°С‚СЊ РІ СЂР°СЃРїСЂРѕСЃС‚СЂР°РЅСЏРµРјС‹Р№ С„Р°Р№Р»
+    sourceCompatibility = JavaVersion.toVersion(25)
+    targetCompatibility = JavaVersion.toVersion(25)
+}
+
+jar {
+    from("LICENSE") {
+        rename { "${it}_${project.base.archivesName.get()}"}
+    }
+    // РЇРІРЅРѕ РґРѕР±Р°РІР»СЏРµРј native DLL РІ jar вЂ” Fabric Loom РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ excludes .dll РёР· СЂРµСЃСѓСЂСЃРѕРІ
+    from('src/main/resources') {
+        include 'win32-x86-64/attackdlc-guard.dll'
+        include 'win32-x86/attackdlc-guard.dll'
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    }
+}
+
+// в”Ђв”Ђв”Ђ РџСЂРѕС‚РµРєС‚: РіРµРЅРµСЂР°С†РёСЏ С…РµС€РµР№ РєР»Р°СЃСЃРѕРІ РґР»СЏ integrity check в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ
+
+task dumpClassHashes {
+    group = 'protect'
+    description = 'Р’С‹РІРѕРґРёС‚ SHA-256 С…РµС€Рё РєР»СЋС‡РµРІС‹С… РєР»Р°СЃСЃРѕРІ вЂ” РІСЃС‚Р°РІРёС‚СЊ РІ NativeGuard.java'
+    doLast {
+        // Fabric Loom РєР»Р°РґС‘С‚ jar РІ devlibs, РЅРµ РІ libs
+        def jarFile = file("${layout.buildDirectory.get().asFile}/devlibs/${project.base.archivesName.get()}-${project.version}-dev.jar")
+        if (!jarFile.exists()) jarFile = jar.archiveFile.get().asFile
+        def zip = new java.util.zip.ZipFile(jarFile)
+        def entries = [
+            'org/attackdlc/license/LicenseManager.class',
+            'org/attackdlc/license/Hwid.class',
+            'org/attackdlc/AttackDlcClient.class'
+        ]
+        entries.each { path ->
+            def e = zip.getEntry(path)
+            if (!e) { println "[MISSING] $path"; return }
+            def md = java.security.MessageDigest.getInstance('SHA-256')
+            zip.getInputStream(e).withCloseable { is ->
+                byte[] b = new byte[8192]
+                int n
+                while ((n = is.read(b)) != -1) md.update(b, 0, n)
+            }
+            def hex = md.digest().collect { String.format('%02x', it) }.join()
+            println "$path"
+            println "  в†’ $hex"
+            println ""
+        }
+        zip.close()
+    }
+}
+
+// в”Ђв”Ђв”Ђ РћР±С„СѓСЃРєР°С†РёСЏ С‡РµСЂРµР· OBF (ASM-based, Java 25 compatible) в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ
+// Р—Р°РїСѓСЃРє: .\gradlew.bat obfuscate
+// РџРѕСЃР»Рµ РѕР±С„СѓСЃРєР°С†РёРё РєРѕРїРёСЂСѓРµС‚ СЂРµР·СѓР»СЊС‚Р°С‚ РІ devlibs/ РґР»СЏ РґРµРїР»РѕСЏ.
+
+tasks.register('obfuscate', Exec) {
+    group = 'protect'
+    description = 'РћР±С„СѓСЃРєР°С†РёСЏ РєР»РёРµРЅС‚Р° С‡РµСЂРµР· OBF: ASM-РїРµСЂРµРёРјРµРЅРѕРІР°РЅРёРµ + XOR-СЃС‚СЂРѕРєРё + junk-РєР»Р°СЃСЃС‹'
+    dependsOn jar
+
+    def inputJar  = jar.archiveFile.get().asFile
+    def obfOutDir = file("${layout.buildDirectory.get().asFile}/obf")
+    obfOutDir.mkdirs()
+    def outputJar = file("${obfOutDir}/${project.base.archivesName.get()}-${project.version}-obf.jar")
+    def mappings  = file("${obfOutDir}/mappings.txt")
+    def obfJar    = file("C:/Users/Kitikat/Desktop/OBF/target/OBF-1.0-SNAPSHOT-shaded.jar")
+
+    if (!obfJar.exists()) {
+        throw new GradleException("OBF РЅРµ РЅР°Р№РґРµРЅ: ${obfJar}. РЎРѕР±РµСЂРё РІ IntelliJ: Maven в†’ package")
+    }
+
+    workingDir project.rootDir
+    commandLine 'java', '-jar', obfJar.absolutePath,
+            inputJar.absolutePath,
+            outputJar.absolutePath,
+            '--mappings', mappings.absolutePath,
+            '--junk-ratio', '9',
+            '--keep-class', 'sdk/api/invoke/api/invoke',
+            '--keep-class', 'sdk/api/invoke/impl/PackerMode',
+            '--keep-class', 'sdk/api/invoke/impl/PackerType'
+
+    doLast {
+        if (!outputJar.exists()) throw new GradleException("OBF РЅРµ СЃРѕР·РґР°Р» jar: ${outputJar}")
+        // Р РµР·СѓР»СЊС‚Р°С‚ РєР»Р°РґС‘Рј РІ devlibs вЂ” РѕС‚С‚СѓРґР° Р»Р°СѓРЅС‡РµСЂ Р±РµСЂС‘С‚ РґР»СЏ Р·Р°РїСѓСЃРєР°
+        def devlibs = file("${layout.buildDirectory.get().asFile}/devlibs")
+        devlibs.mkdirs()
+        def devJar = file("${devlibs}/${project.base.archivesName.get()}-${project.version}-dev.jar")
+        outputJar.renameTo(devJar)
+        println "[obf] в†’ ${devJar}"
+    }
+}
+
+// в”Ђв”Ђв”Ђ Release-jar: РѕР±С„СѓСЃС†РёСЂРѕРІР°РЅРЅС‹Р№ РєР»РёРµРЅС‚ РґР»СЏ РјР°РіР°Р·РёРЅР° в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ
+
+task releaseJar(type: Copy) {
+    dependsOn obfuscate
+    group = 'distribution'
+    description = 'РљРѕРїРёСЂСѓРµС‚ obfuscated jar РІ store + release'
+    doLast {
+        def devlibs  = file("${layout.buildDirectory.get().asFile}/devlibs")
+        def devJar   = file("${devlibs}/${project.base.archivesName.get()}-${project.version}-dev.jar")
+        def release  = file("${layout.buildDirectory.get().asFile}/release")
+        release.mkdirs()
+        if (devJar.exists()) {
+            copy { from devJar; into release; rename { "attackdlc.jar" } }
+            println "[release] в†’ ${release}/attackdlc.jar"
+        }
+    }
+}
+
+// в”Ђв”Ђв”Ђ РҐРµС€Рё РєР»Р°СЃСЃРѕРІ РїРѕСЃР»Рµ РѕР±С„СѓСЃРєР°С†РёРё (РѕР±РЅРѕРІР»СЏС‚СЊ NativeGuard РїСЂРё РєР°Р¶РґРѕР№ СЃР±РѕСЂРєРµ) в”Ђ
+
+task dumpClassHashesAfterObf {
+    group = 'protect'
+    description = 'Р’С‹РІРѕРґРёС‚ SHA-256 С…РµС€РµР№ РѕР±С„СѓСЃС†РёСЂРѕРІР°РЅРЅС‹С… РєР»Р°СЃСЃРѕРІ вЂ” РІСЃС‚Р°РІРёС‚СЊ РІ NativeGuard.java'
+    dependsOn obfuscate
+    doLast {
+        def devlibs = file("${layout.buildDirectory.get().asFile}/devlibs")
+        def devJar  = file("${devlibs}/${project.base.archivesName.get()}-${project.version}-dev.jar")
+        if (!devJar.exists()) { println "[hashes] dev jar not found"; return }
+        def zip = new java.util.zip.ZipFile(devJar)
+        def targets = ['LicenseManager.class', 'Hwid.class', 'AttackDlcClient.class']
+        targets.each { name ->
+            def e = zip.entries().find { it.name.endsWith("/$name") || it.name == name }
+            if (!e) { println "[MISSING] $name"; return }
+            def md = java.security.MessageDigest.getInstance('SHA-256')
+            zip.getInputStream(e).withCloseable { is ->
+                byte[] b = new byte[8192]; int n
+                while ((n = is.read(b)) != -1) md.update(b, 0, n)
+            }
+            def hex = md.digest().collect { String.format('%02x', it) }.join()
+            println "$name  в†’  $hex"
+        }
+        zip.close()
+    }
+}
+
