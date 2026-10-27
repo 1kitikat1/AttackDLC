@@ -28,10 +28,10 @@ import java.time.LocalTime;
  */
 public final class TitleScreenRenderer {
     private static final String[] LABELS = {
-            "Одиночная игра", "Сетевая игра", "Аккаунты", "Настройки", "Выход"
+            "Одиночная игра", "Сетевая игра", "Настройки", "Выход"
     };
     private static final String[] HINTS = {
-            "локальные миры", "серверы", "менеджер аккаунтов", "параметры игры", "закрыть клиент"
+            "локальные миры", "серверы", "параметры игры", "закрыть клиент"
     };
 
     // Геометрия
@@ -376,9 +376,8 @@ public final class TitleScreenRenderer {
         switch (index) {
             case 0 -> mc.gui.setScreen(new SelectWorldScreen(parent));
             case 1 -> mc.gui.setScreen(new JoinMultiplayerScreen(parent));
-            case 2 -> mc.gui.setScreen(new AccountsScreen(parent));
-            case 3 -> mc.gui.setScreen(new OptionsScreen(parent, mc.options, false));
-            case 4 -> mc.stop();
+            case 2 -> mc.gui.setScreen(new OptionsScreen(parent, mc.options, false));
+            case 3 -> mc.stop();
             default -> {
             }
         }
