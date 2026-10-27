@@ -1,4 +1,22 @@
-﻿# Build artifacts
+﻿# Build
 build/
+run/
 .gradle/
-*.obj
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Patches / scripts
+patch.*
+patch_*.py
