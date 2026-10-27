@@ -1,4 +1,4 @@
-﻿plugins {
+﻿plugins{
     id 'fabric-loom' version '1.17.12'
     id 'maven-publish'
 }
@@ -97,9 +97,9 @@ task dumpClassHashes {
         if (!jarFile.exists()) jarFile = jar.archiveFile.get().asFile
         def zip = new java.util.zip.ZipFile(jarFile)
         def entries = [
-            'org/attackdlc/license/LicenseManager.class',
-            'org/attackdlc/license/Hwid.class',
-            'org/attackdlc/AttackDlcClient.class'
+                'org/attackdlc/license/LicenseManager.class',
+                'org/attackdlc/license/Hwid.class',
+                'org/attackdlc/AttackDlcClient.class'
         ]
         entries.each { path ->
             def e = zip.getEntry(path)
