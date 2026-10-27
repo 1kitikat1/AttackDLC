@@ -12,8 +12,6 @@ import org.attackdlc.utils.render.Theme;
 import org.attackdlc.utils.render.gui.Render2DUtil;
 import org.attackdlc.utils.render.gui.UiFontStyle;
 import org.attackdlc.utils.render.gui.UiFonts;
-import org.attackdlc.utils.text.NameProtectUtil;
-import org.attackdlc.utils.text.StringUtil;
 
 /**
  * Боковая панель меню.
@@ -32,8 +30,6 @@ public final class MenuSidebar extends Component {
     private static final int BRAND_Y = 14;
     private static final int CATEGORY_LABEL_Y = 48;
     private static final int NAV_START_Y = 226;
-    private static final int PROFILE_Y = 548;
-    private static final int PROFILE_H = 48;
 
     private static final MenuPage[] NAV_PAGES = new MenuPage[]{
         MenuPage.SEARCH, MenuPage.FRIENDS, MenuPage.ATTACK,
@@ -54,7 +50,6 @@ public final class MenuSidebar extends Component {
     private int mouseX, mouseY;
     private MenuPage activePage = MenuPage.NONE;
     private FeatureCategory activeCategory = FeatureCategory.COMBAT;
-    private String username = "";
     private float panelRadius;
     private int hoveredNav = -1;
     private int hoveredCat = -1;
@@ -65,16 +60,7 @@ public final class MenuSidebar extends Component {
         this.mouseX = mx; this.mouseY = my;
         this.activePage = state.page();
         this.activeCategory = activeCat;
-        this.username = StringUtil.abbreviate(NameProtectUtil.protect(accountNick()), 13);
         this.panelRadius = panelRadius;
-    }
-
-    private static String accountNick() {
-        try {
-            String name = ru.xd.Session.getName();
-            if (name != null && !name.isBlank()) return name;
-        } catch (Throwable ignored) {}
-        return "Player";
     }
 
     public MenuPage pageAt(float mx, float my) {
@@ -100,10 +86,6 @@ public final class MenuSidebar extends Component {
         return null;
     }
 
-    public boolean isProfileAt(float mx, float my) {
-        return mx >= sx(ROW_X) && mx <= sx(WIDTH - 4) && my >= sy(PROFILE_Y) && my <= sy(PROFILE_Y + PROFILE_H);
-    }
-
     @Override
     public void render(Minecraft mc, GuiGraphicsExtractor ctx) {
         drawBackground();
@@ -111,7 +93,6 @@ public final class MenuSidebar extends Component {
         drawCategories();
         drawHairline(388);
         drawNav();
-        drawProfile();
     }
 
     private void drawBackground() {
@@ -181,34 +162,6 @@ public final class MenuSidebar extends Component {
             Render2DUtil.text(sx(ROW_X + 30f), textY, px(11f), NAV_LABELS[i])
                 .style(UiFontStyle.MEDIUM).color(tc).draw();
         }
-    }
-
-    private void drawProfile() {
-        boolean hovered = isProfileAt(mouseX, mouseY);
-        if (hovered) {
-            Render2DUtil.rect(sx(ROW_X), sy(PROFILE_Y), px(WIDTH - ROW_X), px(PROFILE_H))
-                .color(ColorUtil.rgba(255, 255, 255, 7)).radius(px(5f)).draw();
-        }
-        float avatarSize = px(20f);
-        float avatarX = sx(ROW_X + 10f);
-        float avatarY = sy(PROFILE_Y + 14f);
-        Render2DUtil.texture(avatarX, avatarY, avatarSize, avatarSize, Textures.Header.PROFILE_AVATAR).draw();
-        float nameX = sx(ROW_X + 38f);
-        float nameCY = PROFILE_Y + 17f;
-        Render2DUtil.text(nameX, UiFonts.sfProDisplay().centeredTextY(sy(nameCY), px(10f)), px(10f), username)
-            .style(UiFontStyle.SEMIBOLD).color(Theme.Colors.PRIMARY).draw();
-        try {
-            String role = ru.xd.Session.getRole();
-            boolean isOwner = "owner".equalsIgnoreCase(role);
-            float crownSize = px(10f);
-            float nameW = UiFonts.sfProDisplay().measureWidth(username, px(10f), px(10f) * UiFontStyle.SEMIBOLD.letterSpacingEm());
-            float crownX = sx(nameX + (nameW - crownSize) / 2f);
-            float crownY = sy(nameCY + 10f);
-            Render2DUtil.texture(crownX, crownY, crownSize, crownSize, Textures.Icons.CROWN)
-                .color(isOwner ? Theme.getAccent() : Theme.Colors.SECONDARY).draw();
-        } catch (Throwable ignored) {}
-        Render2DUtil.text(nameX, UiFonts.sfProDisplay().centeredTextY(sy(nameCY + 26f), px(8f)), px(8f), "Аккаунт")
-            .style(UiFontStyle.REGULAR).color(Theme.Colors.SECONDARY_DARK).draw();
     }
 
     private void drawHairline(float y) {
