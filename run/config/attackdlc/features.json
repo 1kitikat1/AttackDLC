@@ -503,14 +503,14 @@
         "Crystal Height": 2.5,
         "TNT Distance": 8.0,
         "Dangers": [
-          "Explosion",
           "Elytra",
           "Obsidian",
           "Fall",
           "Spear",
           "Mace",
           "Anchor",
-          "Crystal"
+          "Crystal",
+          "Explosion"
         ]
       }
     },

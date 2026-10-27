@@ -10,8 +10,8 @@ public enum MenuPage {
    ATTACK,
    COSMETICS;
 
-   private static final MenuPage[] ACTION_PAGES = new MenuPage[]{SETTINGS, FRIENDS, CONFIGURATIONS, ATTACK, COSMETICS};
-   private static final MenuPage[] NAV_PAGES = new MenuPage[]{SEARCH, FRIENDS, ATTACK, SETTINGS, CONFIGURATIONS, COSMETICS};
+   private static final MenuPage[] ACTION_PAGES = new MenuPage[]{SETTINGS, FRIENDS, CONFIGURATIONS, ATTACK};
+   private static final MenuPage[] NAV_PAGES = new MenuPage[]{SEARCH, FRIENDS, ATTACK, SETTINGS, CONFIGURATIONS};
 
    public static MenuPage[] actionPages() {
       return (MenuPage[])ACTION_PAGES.clone();

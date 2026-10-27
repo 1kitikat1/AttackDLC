@@ -7,7 +7,6 @@ import org.attackdlc.feature.FeatureCategory;
 import org.attackdlc.feature.FeatureManager;
 import org.attackdlc.menu.pages.ConfigPage;
 import org.attackdlc.menu.pages.SettingsPage;
-import org.attackdlc.menu.pages.cosmetics.CosmeticsPage;
 import org.attackdlc.menu.pages.friends.FriendPage;
 import org.attackdlc.menu.pages.modules.ModulePage;
 import org.attackdlc.menu.ui.Component;
@@ -29,7 +28,6 @@ public final class MenuOverlayRenderer extends Component {
     private final FriendPage friends = new FriendPage();
     private final ConfigPage configs = new ConfigPage();
     private final org.attackdlc.menu.pages.attack.AttackPage attack = new org.attackdlc.menu.pages.attack.AttackPage();
-    private final CosmeticsPage cosmetics = new CosmeticsPage();
     private MenuDimensions dimensions;
     private MenuPage displayPage = MenuPage.NONE;
 
@@ -46,7 +44,6 @@ public final class MenuOverlayRenderer extends Component {
         friends.layout(content, state, mx, my);
         configs.layout(content, state, mx, my);
         attack.layout(content, state, mx, my);
-        cosmetics.layout(content, state, mx, my);
         header.place(this, state, mc, mx, my, modules.selectedCategory(),
                      enabledCount(modules.selectedCategory()), totalCount(modules.selectedCategory()));
     }
@@ -80,7 +77,6 @@ public final class MenuOverlayRenderer extends Component {
             case FRIENDS  -> friends.handleClick(mx, my);
             case CONFIGURATIONS -> configs.handleClick(mx, my);
             case ATTACK -> attack.handleClick(mx, my);
-            case COSMETICS -> cosmetics.handleClick(mx, my);
             default     -> modules.handleMouseButton(mx, my, button);
         };
     }
@@ -101,7 +97,6 @@ public final class MenuOverlayRenderer extends Component {
     public boolean handleKey(int key) {
         if (displayPage == MenuPage.FRIENDS) return friends.handleKey(key);
         if (displayPage == MenuPage.ATTACK)  return attack.handleKey(key);
-        if (displayPage == MenuPage.COSMETICS) return cosmetics.handleKey(key);
         if (displayPage == MenuPage.CONFIGURATIONS) return configs.handleKey(key);
         return (displayPage == MenuPage.NONE || displayPage == MenuPage.SEARCH) && modules.handleKey(key);
     }
@@ -109,7 +104,6 @@ public final class MenuOverlayRenderer extends Component {
     public boolean handleCharacter(int cp) {
         if (displayPage == MenuPage.FRIENDS) return friends.handleCharacter(cp);
         if (displayPage == MenuPage.ATTACK)  return attack.handleCharacter(cp);
-        if (displayPage == MenuPage.COSMETICS) return cosmetics.handleCharacter(cp);
         if (displayPage == MenuPage.CONFIGURATIONS) return configs.handleCharacter(cp);
         return displayPage == MenuPage.NONE && modules.handleCharacter(cp);
     }
@@ -121,7 +115,6 @@ public final class MenuOverlayRenderer extends Component {
             case FRIENDS:     friends.handleScroll(mx, my, v); break;
             case CONFIGURATIONS: configs.handleScroll(mx, my, v); break;
             case ATTACK:      attack.handleScroll(mx, my, v); break;
-            case COSMETICS:   cosmetics.handleScroll(mx, my, v); break;
             case NONE: case SEARCH: modules.handleScroll(mx, my, v); break;
             default: break;
         }
@@ -141,7 +134,6 @@ public final class MenuOverlayRenderer extends Component {
             case FRIENDS:     friends.render(mc, ctx); break;
             case CONFIGURATIONS: configs.render(mc, ctx); break;
             case ATTACK:      attack.render(mc, ctx); break;
-            case COSMETICS:   cosmetics.render(mc, ctx); break;
             default:          modules.render(mc, ctx);
         }
         header.render(mc, ctx);
@@ -152,24 +144,13 @@ public final class MenuOverlayRenderer extends Component {
 
     private void drawBackground() {
         float r = dimensions.panelRadius();
-        // Мягкая тень
         Render2DUtil.rect(x(), y() + px(5f), width(), height())
-            .color(0)
-            .radius(r)
-            .shadow(Theme.Colors.PANEL_SHADOW, px(14f))
-            .draw();
-        // Основной фон
+            .color(0).radius(r).shadow(Theme.Colors.PANEL_SHADOW, px(14f)).draw();
         Render2DUtil.rect(x(), y(), width(), height())
-            .color(Theme.Colors.PANEL)
-            .radius(r)
-            .draw();
-        // Тонкая волосковая рамка
+            .color(Theme.Colors.PANEL).radius(r).draw();
         float border = Math.max(0.5F, px(0.8F));
         Render2DUtil.rect(x(), y(), width(), height())
-            .color(0)
-            .radius(r)
-            .border(border, Theme.Colors.PANEL_BORDER)
-            .draw();
+            .color(0).radius(r).border(border, Theme.Colors.PANEL_BORDER).draw();
     }
 
     private static int totalCount(FeatureCategory cat) {

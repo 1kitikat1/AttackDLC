@@ -33,15 +33,14 @@ public final class MenuSidebar extends Component {
 
     private static final MenuPage[] NAV_PAGES = new MenuPage[]{
         MenuPage.SEARCH, MenuPage.FRIENDS, MenuPage.ATTACK,
-        MenuPage.SETTINGS, MenuPage.CONFIGURATIONS, MenuPage.COSMETICS
+        MenuPage.SETTINGS, MenuPage.CONFIGURATIONS
     };
     private static final Identifier[] NAV_ICONS = new Identifier[]{
         Textures.Header.SEARCH, Textures.Header.FRIENDS,
-        Textures.Icons.USER_ROUND, Textures.Header.SETTINGS, Textures.Header.DOCUMENT,
-        Textures.Icons.SPARKLES
+        Textures.Icons.USER_ROUND, Textures.Header.SETTINGS, Textures.Header.DOCUMENT
     };
     private static final String[] NAV_LABELS = new String[]{
-        "Search", "Friends", "Attack", "Settings", "Configs", "Cosmetics"
+        "Search", "Friends", "Attack", "Settings", "Configs"
     };
     private static final Identifier[] CATEGORY_ICONS = new Identifier[]{
         Textures.Icons.SWORDS_DAGGER, Textures.Icons.PERSON_STANDING, Textures.Icons.EYE,
