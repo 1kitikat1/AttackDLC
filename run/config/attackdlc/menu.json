@@ -1,0 +1,17 @@
+{
+  "accentIndex": 0,
+  "language": "english",
+  "roundedMode": 1,
+  "uiScale": 0.96599996,
+  "hudScale100Migrated": true,
+  "hud.notifications.x": 0.5,
+  "hud.notifications.y": 0.6072641,
+  "hud.target.x": 0.72571427,
+  "hud.target.y": 0.3009647,
+  "hud.potions.x": 0.3935539,
+  "hud.potions.y": 0.064563304,
+  "hud.mine_timer.x": 0.2608556,
+  "hud.mine_timer.y": 0.01590353,
+  "hud.coords.x": 0.9469453,
+  "hud.coords.y": 0.0949232
+}

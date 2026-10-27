@@ -1,0 +1,54 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 20315,
+      "minecraft:walk_one_cm": 14323,
+      "minecraft:leave_game": 7,
+      "minecraft:horse_one_cm": 586,
+      "minecraft:mob_kills": 15,
+      "minecraft:damage_dealt": 26543,
+      "minecraft:play_time": 20315,
+      "minecraft:jump": 760,
+      "minecraft:time_since_death": 20315,
+      "minecraft:drop": 1,
+      "minecraft:sprint_one_cm": 20478,
+      "minecraft:total_world_time": 29427,
+      "minecraft:fly_one_cm": 125130,
+      "minecraft:walk_on_water_one_cm": 421,
+      "minecraft:crouch_one_cm": 36,
+      "minecraft:sneak_time": 21
+    },
+    "minecraft:picked_up": {
+      "minecraft:blue_egg": 1,
+      "minecraft:sculk_catalyst": 2,
+      "minecraft:feather": 4,
+      "minecraft:chicken": 3,
+      "minecraft:mutton": 1,
+      "minecraft:leather": 5,
+      "minecraft:gunpowder": 1,
+      "minecraft:bone": 1,
+      "minecraft:arrow": 1,
+      "minecraft:gray_wool": 1,
+      "minecraft:netherite_sword": 1,
+      "minecraft:rotten_flesh": 1
+    },
+    "minecraft:used": {
+      "minecraft:sculk_catalyst": 2,
+      "minecraft:warden_spawn_egg": 5,
+      "minecraft:netherite_sword": 307,
+      "minecraft:oak_leaves": 119,
+      "minecraft:blue_egg": 4
+    },
+    "minecraft:killed": {
+      "minecraft:zombie": 2,
+      "minecraft:horse": 3,
+      "minecraft:warden": 5,
+      "minecraft:creeper": 2,
+      "minecraft:sheep": 1
+    },
+    "minecraft:dropped": {
+      "minecraft:netherite_sword": 1
+    }
+  },
+  "DataVersion": 4903
+}

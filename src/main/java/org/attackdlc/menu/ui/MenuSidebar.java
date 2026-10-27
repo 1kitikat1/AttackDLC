@@ -12,7 +12,15 @@ import org.attackdlc.utils.render.Theme;
 import org.attackdlc.utils.render.gui.Render2DUtil;
 import org.attackdlc.utils.render.gui.UiFontStyle;
 import org.attackdlc.utils.render.gui.UiFonts;
+import org.attackdlc.utils.text.NameProtectUtil;
+import org.attackdlc.utils.text.StringUtil;
 
+/**
+ * Боковая панель меню.
+ *   Верх: CATEGORIES (Combat…PVE).
+ *   Низ: навигация (Search, Friends, Attack, Settings, Configs).
+ *   Профиль внизу.
+ */
 public final class MenuSidebar extends Component {
     private static final int WIDTH = 160;
     private static final int ROW_H = 32;
@@ -46,6 +54,7 @@ public final class MenuSidebar extends Component {
     private int mouseX, mouseY;
     private MenuPage activePage = MenuPage.NONE;
     private FeatureCategory activeCategory = FeatureCategory.COMBAT;
+    private String username = "";
     private float panelRadius;
     private int hoveredNav = -1;
     private int hoveredCat = -1;
@@ -56,12 +65,24 @@ public final class MenuSidebar extends Component {
         this.mouseX = mx; this.mouseY = my;
         this.activePage = state.page();
         this.activeCategory = activeCat;
+        this.username = StringUtil.abbreviate(NameProtectUtil.protect(accountNick()), 13);
         this.panelRadius = panelRadius;
+    }
+
+    private static String accountNick() {
+        try {
+            String name = ru.xd.Session.getName();
+            if (name != null && !name.isBlank()) return name;
+        } catch (Throwable ignored) {}
+        return "Player";
     }
 
     public MenuPage pageAt(float mx, float my) {
         for (int i = 0; i < NAV_PAGES.length; i++) {
-            if (hit(mx, my, ROW_X, navY(i), WIDTH - ROW_X, ROW_H)) { hoveredNav = i; return NAV_PAGES[i]; }
+            if (hit(mx, my, ROW_X, navY(i), WIDTH - ROW_X, ROW_H)) {
+                hoveredNav = i;
+                return NAV_PAGES[i];
+            }
         }
         hoveredNav = -1;
         return MenuPage.NONE;
@@ -70,10 +91,17 @@ public final class MenuSidebar extends Component {
     public FeatureCategory categoryAt(float mx, float my) {
         FeatureCategory[] cats = FeatureCategory.values();
         for (int i = 0; i < Math.min(cats.length, CATEGORY_ICONS.length); i++) {
-            if (hit(mx, my, CATEGORY_X, catY(i), WIDTH - CATEGORY_X, CATEGORY_H)) { hoveredCat = i; return cats[i]; }
+            if (hit(mx, my, CATEGORY_X, catY(i), WIDTH - CATEGORY_X, CATEGORY_H)) {
+                hoveredCat = i;
+                return cats[i];
+            }
         }
         hoveredCat = -1;
         return null;
+    }
+
+    public boolean isProfileAt(float mx, float my) {
+        return mx >= sx(ROW_X) && mx <= sx(WIDTH - 4) && my >= sy(PROFILE_Y) && my <= sy(PROFILE_Y + PROFILE_H);
     }
 
     @Override
@@ -81,7 +109,7 @@ public final class MenuSidebar extends Component {
         drawBackground();
         drawBrand();
         drawCategories();
-        drawHairline(376);
+        drawHairline(388);
         drawNav();
         drawProfile();
     }
@@ -156,37 +184,31 @@ public final class MenuSidebar extends Component {
     }
 
     private void drawProfile() {
-        float py = sy(PROFILE_Y);
-        float ph = px(PROFILE_H);
-        float pw = px(WIDTH - ROW_X);
-        boolean hovered = mouseY >= py && mouseY <= py + ph && mouseX >= sx(ROW_X) && mouseX <= sx(WIDTH - 4);
+        boolean hovered = isProfileAt(mouseX, mouseY);
         if (hovered) {
-            Render2DUtil.rect(sx(ROW_X), py, pw, ph)
+            Render2DUtil.rect(sx(ROW_X), sy(PROFILE_Y), px(WIDTH - ROW_X), px(PROFILE_H))
                 .color(ColorUtil.rgba(255, 255, 255, 7)).radius(px(5f)).draw();
         }
-        float avSize = px(20f);
-        float avX = sx(ROW_X + 10f);
-        float avY = py + px(14f);
-        Render2DUtil.texture(avX, avY, avSize, avSize, Textures.Header.PROFILE_AVATAR).draw();
+        float avatarSize = px(20f);
+        float avatarX = sx(ROW_X + 10f);
+        float avatarY = sy(PROFILE_Y + 14f);
+        Render2DUtil.texture(avatarX, avatarY, avatarSize, avatarSize, Textures.Header.PROFILE_AVATAR).draw();
         float nameX = sx(ROW_X + 38f);
         float nameCY = PROFILE_Y + 17f;
+        Render2DUtil.text(nameX, UiFonts.sfProDisplay().centeredTextY(sy(nameCY), px(10f)), px(10f), username)
+            .style(UiFontStyle.SEMIBOLD).color(Theme.Colors.PRIMARY).draw();
         try {
-            String nick = ru.xd.Session.getName();
-            String username = (nick != null && !nick.isBlank()) ? nick : "Player";
-            Render2DUtil.text(nameX, UiFonts.sfProDisplay().centeredTextY(sy(nameCY), px(10f)), px(10f), username)
-                .style(UiFontStyle.SEMIBOLD).color(Theme.Colors.PRIMARY).draw();
             String role = ru.xd.Session.getRole();
-            if ("owner".equalsIgnoreCase(role)) {
-                float crownSize = px(10f);
-                float nameW = UiFonts.sfProDisplay().measureWidth(username, px(10f), 0f);
-                Render2DUtil.texture(sx(nameX + nameW + px(4f)), sy(nameCY + 1f), crownSize, crownSize, Textures.Icons.CROWN)
-                    .color(Theme.getAccent()).draw();
-            }
-            if (role != null && !role.isBlank()) {
-                Render2DUtil.text(nameX, UiFonts.sfProDisplay().centeredTextY(sy(nameCY + 26f), px(8f)), px(8f), role)
-                    .style(UiFontStyle.REGULAR).color(Theme.Colors.SECONDARY_DARK).draw();
-            }
+            boolean isOwner = "owner".equalsIgnoreCase(role);
+            float crownSize = px(10f);
+            float nameW = UiFonts.sfProDisplay().measureWidth(username, px(10f), px(10f) * UiFontStyle.SEMIBOLD.letterSpacingEm());
+            float crownX = sx(nameX + (nameW - crownSize) / 2f);
+            float crownY = sy(nameCY + 10f);
+            Render2DUtil.texture(crownX, crownY, crownSize, crownSize, Textures.Icons.CROWN)
+                .color(isOwner ? Theme.getAccent() : Theme.Colors.SECONDARY).draw();
         } catch (Throwable ignored) {}
+        Render2DUtil.text(nameX, UiFonts.sfProDisplay().centeredTextY(sy(nameCY + 26f), px(8f)), px(8f), "Аккаунт")
+            .style(UiFontStyle.REGULAR).color(Theme.Colors.SECONDARY_DARK).draw();
     }
 
     private void drawHairline(float y) {
@@ -195,6 +217,6 @@ public final class MenuSidebar extends Component {
             .color(Theme.Colors.DIVIDER_SUBTLE).draw();
     }
 
-    private static float catY(int i)    { return CATEGORY_LABEL_Y + 8f + i * (CATEGORY_H + CATEGORY_GAP); }
-    private static float navY(int i)    { return NAV_START_Y + i * (ROW_H + ROW_GAP); }
+    private static float catY(int i) { return CATEGORY_LABEL_Y + 8f + i * (CATEGORY_H + CATEGORY_GAP); }
+    private static float navY(int i) { return NAV_START_Y + i * (ROW_H + ROW_GAP); }
 }
