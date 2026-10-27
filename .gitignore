@@ -1,1 +1,24 @@
-﻿# Release-only distribution — nothing but mods/
+﻿# Release-only repo — everything else stays local
+mods/
+version.json
+.gitignore
+
+# Build artifacts — never push
+build/
+.gradle/
+run/
+debug-out/
+
+# Source code — local only, never pushed
+src/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Windows
+Thumbs.db
+*.obj
+*.log
