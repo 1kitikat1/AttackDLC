@@ -112,6 +112,7 @@ import org.attackdlc.feature.impl.visual.BlockEspFeature;
 import org.attackdlc.feature.impl.visual.BlockOutlineFeature;
 import org.attackdlc.feature.impl.visual.ChamsFeature;
 import org.attackdlc.feature.impl.visual.CrosshairFeature;
+import org.attackdlc.feature.impl.visual.CosmeticsFeature;
 import org.attackdlc.feature.impl.visual.SwingAnimationFeature;
 import org.attackdlc.feature.impl.visual.EntityEspFeature;
 import org.attackdlc.feature.impl.visual.HitParticlesFeature;
@@ -260,7 +261,8 @@ public final class FeatureManager {
                new ClanInvestFeature(),
                new GriefJoinerFeature(),
                new AutoPottBotFeature(),
-                new PanicFeature()
+                new PanicFeature(),
+                 new CosmeticsFeature()
             )
             .forEach(this::register);
          this.configStore.load(this);

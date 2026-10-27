@@ -462,7 +462,6 @@
         "Predict Move": true,
         "Ignore Walls": false,
         "Anti Suicide": true,
-        "Safe Detonate": true,
         "HvH Mode": false
       }
     },
@@ -505,13 +504,13 @@
         "TNT Distance": 8.0,
         "Dangers": [
           "Elytra",
-          "Explosion",
-          "Crystal",
-          "Anchor",
-          "Mace",
-          "Spear",
+          "Obsidian",
           "Fall",
-          "Obsidian"
+          "Spear",
+          "Mace",
+          "Anchor",
+          "Crystal",
+          "Explosion"
         ]
       }
     },
@@ -708,8 +707,8 @@
           "StaffList"
         ],
         "Size": 110.0,
-        "Glass blur": 95.0,
-        "Chat Size": 86.0
+        "Glass blur": 90.0,
+        "Chat Size": 81.0
       }
     },
     "Arrows": {
@@ -750,8 +749,8 @@
       "bindMode": "TOGGLE",
       "settings": {
         "Targets": [
-          "Hostile",
-          "Players"
+          "Players",
+          "Hostile"
         ],
         "Box Mode": "Corners",
         "Rounded": false,
@@ -829,13 +828,13 @@
       "bindMode": "TOGGLE",
       "settings": {
         "visual.killeffect.amount": 370.0,
-        "visual.killeffect.hold": 1.2,
-        "visual.killeffect.fade": 1.0,
+        "visual.killeffect.hold": 1.1,
+        "visual.killeffect.fade": 0.9,
         "visual.killeffect.scatter": 1.0,
         "visual.killeffect.gravity": 2.3000000000000003,
-        "visual.killeffect.size": 0.13,
+        "visual.killeffect.size": 0.12,
         "visual.killeffect.color": "#6CF9B0FF",
-        "visual.killeffect.glow": 0.7000000000000001
+        "visual.killeffect.glow": 0.5
       }
     },
     "Trajectories": {
@@ -910,8 +909,8 @@
       "bindMode": "TOGGLE",
       "settings": {
         "Overlay": [
-          "Bad Effects",
-          "Fire"
+          "Fire",
+          "Bad Effects"
         ],
         "World": [
           "Weather"
@@ -1040,8 +1039,8 @@
       "bindMode": "TOGGLE",
       "settings": {
         "render.chams.targets": [
-          "Hostile",
-          "Players"
+          "Players",
+          "Hostile"
         ],
         "render.chams.distance": 96.0,
         "render.chams.effect": [
@@ -1673,9 +1672,9 @@
       "bindMode": "TOGGLE",
       "settings": {
         "Helpers": [
-          "Next Mine",
+          "Save Pickaxe",
           "Clean Inventory",
-          "Save Pickaxe"
+          "Next Mine"
         ],
         "Cleanup At Free Slots": 2.0,
         "Drop Interval": 1.0,
