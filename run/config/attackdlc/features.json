@@ -503,14 +503,14 @@
         "Crystal Height": 2.5,
         "TNT Distance": 8.0,
         "Dangers": [
+          "Explosion",
+          "Elytra",
           "Obsidian",
           "Fall",
           "Spear",
           "Mace",
           "Anchor",
-          "Crystal",
-          "Explosion",
-          "Elytra"
+          "Crystal"
         ]
       }
     },
@@ -810,10 +810,10 @@
         "Radius": 1.8,
         "Wave Effect": false,
         "Wave Strength": 0.6000000000000001,
-        "Wave Radius": 3.0,
+        "Wave Radius": 2.9000000000000004,
         "Wave Time": 640.0,
         "Glow": false,
-        "Distortion": 1.0,
+        "Distortion": 0.9500000000000001,
         "Color Mode": "Sync",
         "Color": "#7765FFFF"
       }
@@ -964,8 +964,8 @@
       "bind": -1,
       "bindMode": "TOGGLE",
       "settings": {
-        "Right X": 0.0,
-        "Right Y": 0.050000000000000044,
+        "Right X": -0.6499999999999999,
+        "Right Y": 0.0,
         "Right Z": 0.0,
         "Left X": -0.04999999999999993,
         "Left Y": 0.0,

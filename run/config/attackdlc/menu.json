@@ -13,5 +13,27 @@
   "hud.mine_timer.x": 0.2608556,
   "hud.mine_timer.y": 0.01590353,
   "hud.coords.x": 0.9469453,
-  "hud.coords.y": 0.0949232
+  "hud.coords.y": 0.0949232,
+  "accounts": [
+    {
+      "name": "im_kit",
+      "activity": "Never played",
+      "avatar": 2,
+      "pinned": false
+    },
+    {
+      "name": "storm_shot",
+      "activity": "Never played",
+      "avatar": 1,
+      "pinned": false
+    },
+    {
+      "name": "AttackDLC",
+      "activity": "Playing now",
+      "avatar": 0,
+      "pinned": false
+    }
+  ],
+  "selectedAccount": "im_kit",
+  "accountsOldestFirst": false
 }
