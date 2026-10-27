@@ -1,7 +1,5 @@
 package org.attackdlc.hud;
 
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.PlayerInfo;
@@ -15,7 +13,7 @@ import org.attackdlc.utils.render.gui.UiFontStyle;
 import org.attackdlc.utils.render.gui.UiFonts;
 
 /**
- * Watermark: одна тонкая строка — бренд, ник, FPS, пинг, TPS и время.
+ * Watermark: одна тонкая строка — бренд, ник, FPS, пинг и TPS.
  * Без иконок на каждый чих и без «стеклянных» бликов.
  */
 public final class WatermarkElement extends HudElement {
@@ -29,7 +27,6 @@ public final class WatermarkElement extends HudElement {
     private static final float ICON_GAP = 8.0F;
     private static final float LABEL_GAP = 4.0F;
     private static final String BRAND = "AttackDLC";
-    private static final DateTimeFormatter TIME_FORMATTER = DateTimeFormatter.ofPattern("HH:mm", Locale.ROOT);
     private static final long SESSION_REFRESH_MS = 5000L;
     private static String cachedSessionName;
     private static long cachedSessionNameAt;
@@ -39,7 +36,6 @@ public final class WatermarkElement extends HudElement {
     private String fpsText;
     private String pingText;
     private String tpsText;
-    private String timeText;
 
     public WatermarkElement() {
         super("watermark", "Watermark");
@@ -94,7 +90,6 @@ public final class WatermarkElement extends HudElement {
         this.fpsText = String.valueOf(mc.getFps());
         this.pingText = String.valueOf(latency(mc));
         this.tpsText = String.valueOf(tps());
-        this.timeText = LocalTime.now().format(TIME_FORMATTER);
 
         MsdfFont brandFont = UiFonts.sfPro(700);
         MsdfFont font = UiFonts.sfPro(600);
@@ -105,7 +100,6 @@ public final class WatermarkElement extends HudElement {
         float fpsW = this.blockWidth(font, labelFont, this.fpsText, "fps", unit);
         float pingW = this.blockWidth(font, labelFont, this.pingText, "ms", unit);
         float tpsW = this.blockWidth(font, labelFont, this.tpsText, "tps", unit);
-        float timeW = labelFont.measureWidth(this.timeText, TEXT_SIZE * unit, TEXT_SIZE * unit * UiFontStyle.REGULAR.letterSpacingEm());
 
         float w = PAD * unit + ICON_SIZE * unit + ICON_GAP * unit + brandW;
         if (this.showUser) {
@@ -114,7 +108,6 @@ public final class WatermarkElement extends HudElement {
         w += GAP * unit + 1.0F + GAP * unit + fpsW;
         w += GAP * unit + 1.0F + GAP * unit + pingW;
         w += GAP * unit + 1.0F + GAP * unit + tpsW;
-        w += GAP * unit + 1.0F + GAP * unit + timeW;
         w += PAD * unit;
         this.width = w;
         this.height = HEIGHT * unit;
@@ -180,14 +173,6 @@ public final class WatermarkElement extends HudElement {
 
         ox = this.divider(ox, centerY, 11.0F, GAP, unit, alpha);
         ox = this.drawBlock(ox, centerY, font, labelFont, this.tpsText, "tps", unit, alpha);
-
-        ox = this.divider(ox, centerY, 11.0F, GAP, unit, alpha);
-        float timeSize = TEXT_SIZE * unit;
-        Render2DUtil.text(ox, labelFont.centeredTextY(centerY, timeSize), timeSize, this.timeText)
-                .font(labelFont)
-                .style(UiFontStyle.REGULAR)
-                .color(ColorUtil.multiplyAlpha(Theme.Colors.SECONDARY_DARK, alpha))
-                .draw();
     }
 
     private float drawBlock(float ox, float centerY, MsdfFont font, MsdfFont labelFont,
