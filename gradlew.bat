@@ -68,8 +68,8 @@ goto fail
 @rem Setup the command line
 
 @rem Setup Gradle
-set GRADLE_WRAPPER_JAR=%APP_HOME%\wrapper\gradle-wrapper.jar
-set GRADLE_PROPERTIES=%APP_HOME%\..\gradle.properties
+set GRADLE_WRAPPER_JAR=%APP_HOME%\gradle\wrapper\gradle-wrapper.jar
+set GRADLE_PROPERTIES=%APP_HOME%\gradle.properties
 
 @rem Execute Gradle
 "%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %GRADLE_OPTS% -Dorg.gradle.appname=%APP_BASE_NAME% -classpath "%GRADLE_WRAPPER_JAR%" org.gradle.wrapper.GradleWrapperMain %*
